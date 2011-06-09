@@ -1,0 +1,270 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A5909DEC13A069CF0057DD01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DEB13A069CF0057DD01 /* UIKit.framework */; };
+		A5909DEE13A069CF0057DD01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DED13A069CF0057DD01 /* Foundation.framework */; };
+		A5909DF013A069CF0057DD01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DEF13A069CF0057DD01 /* CoreGraphics.framework */; };
+		A5909DF613A069CF0057DD01 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5909DF413A069CF0057DD01 /* InfoPlist.strings */; };
+		A5909DF913A069CF0057DD01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5909DF813A069CF0057DD01 /* main.m */; };
+		A5909DFC13A069CF0057DD01 /* konoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5909DFB13A069CF0057DD01 /* konoAppDelegate.m */; };
+		A5909DFF13A069CF0057DD01 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5909DFD13A069CF0057DD01 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A5909DE713A069CE0057DD01 /* kono.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kono.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5909DEB13A069CF0057DD01 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A5909DED13A069CF0057DD01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A5909DEF13A069CF0057DD01 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A5909DF313A069CF0057DD01 /* kono-Info.plist */ = {isa = PBXFileReference; path = "kono-Info.plist"; sourceTree = "<group>"; };
+		A5909DF513A069CF0057DD01 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A5909DF713A069CF0057DD01 /* kono-Prefix.pch */ = {isa = PBXFileReference; path = "kono-Prefix.pch"; sourceTree = "<group>"; };
+		A5909DF813A069CF0057DD01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A5909DFA13A069CF0057DD01 /* konoAppDelegate.h */ = {isa = PBXFileReference; path = konoAppDelegate.h; sourceTree = "<group>"; };
+		A5909DFB13A069CF0057DD01 /* konoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = konoAppDelegate.m; sourceTree = "<group>"; };
+		A5909DFE13A069CF0057DD01 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A5909DE413A069CE0057DD01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5909DEC13A069CF0057DD01 /* UIKit.framework in Frameworks */,
+				A5909DEE13A069CF0057DD01 /* Foundation.framework in Frameworks */,
+				A5909DF013A069CF0057DD01 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A5909DDC13A069CE0057DD01 = {
+			isa = PBXGroup;
+			children = (
+				A5909DF113A069CF0057DD01 /* kono */,
+				A5909DEA13A069CF0057DD01 /* Frameworks */,
+				A5909DE813A069CE0057DD01 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A5909DE813A069CE0057DD01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5909DE713A069CE0057DD01 /* kono.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5909DEA13A069CF0057DD01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5909DEB13A069CF0057DD01 /* UIKit.framework */,
+				A5909DED13A069CF0057DD01 /* Foundation.framework */,
+				A5909DEF13A069CF0057DD01 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5909DF113A069CF0057DD01 /* kono */ = {
+			isa = PBXGroup;
+			children = (
+				A5909DFA13A069CF0057DD01 /* konoAppDelegate.h */,
+				A5909DFB13A069CF0057DD01 /* konoAppDelegate.m */,
+				A5909DFD13A069CF0057DD01 /* MainWindow.xib */,
+				A5909DF213A069CF0057DD01 /* Supporting Files */,
+			);
+			path = kono;
+			sourceTree = "<group>";
+		};
+		A5909DF213A069CF0057DD01 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5909DF313A069CF0057DD01 /* kono-Info.plist */,
+				A5909DF413A069CF0057DD01 /* InfoPlist.strings */,
+				A5909DF713A069CF0057DD01 /* kono-Prefix.pch */,
+				A5909DF813A069CF0057DD01 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5909DE613A069CE0057DD01 /* kono */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5909E0213A069CF0057DD01 /* Build configuration list for PBXNativeTarget "kono" */;
+			buildPhases = (
+				A5909DE313A069CE0057DD01 /* Sources */,
+				A5909DE413A069CE0057DD01 /* Frameworks */,
+				A5909DE513A069CE0057DD01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kono;
+			productName = kono;
+			productReference = A5909DE713A069CE0057DD01 /* kono.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A5909DDE13A069CE0057DD01 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Stanford University";
+			};
+			buildConfigurationList = A5909DE113A069CE0057DD01 /* Build configuration list for PBXProject "kono" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A5909DDC13A069CE0057DD01;
+			productRefGroup = A5909DE813A069CE0057DD01 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5909DE613A069CE0057DD01 /* kono */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A5909DE513A069CE0057DD01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5909DF613A069CF0057DD01 /* InfoPlist.strings in Resources */,
+				A5909DFF13A069CF0057DD01 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A5909DE313A069CE0057DD01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5909DF913A069CF0057DD01 /* main.m in Sources */,
+				A5909DFC13A069CF0057DD01 /* konoAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A5909DF413A069CF0057DD01 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5909DF513A069CF0057DD01 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A5909DFD13A069CF0057DD01 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5909DFE13A069CF0057DD01 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A5909E0013A069CF0057DD01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		A5909E0113A069CF0057DD01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		A5909E0313A069CF0057DD01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "kono/kono-Prefix.pch";
+				INFOPLIST_FILE = "kono/kono-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A5909E0413A069CF0057DD01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "kono/kono-Prefix.pch";
+				INFOPLIST_FILE = "kono/kono-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A5909DE113A069CE0057DD01 /* Build configuration list for PBXProject "kono" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5909E0013A069CF0057DD01 /* Debug */,
+				A5909E0113A069CF0057DD01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5909E0213A069CF0057DD01 /* Build configuration list for PBXNativeTarget "kono" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5909E0313A069CF0057DD01 /* Debug */,
+				A5909E0413A069CF0057DD01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A5909DDE13A069CE0057DD01 /* Project object */;
+}
