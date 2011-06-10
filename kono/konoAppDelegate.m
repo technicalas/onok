@@ -16,6 +16,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    MainMenuViewController *mmvc = [[MainMenuViewController alloc] init];
+    [self.window addSubview:mmvc.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
