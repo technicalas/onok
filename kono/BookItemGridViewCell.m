@@ -47,6 +47,10 @@
         return ( nil );
     
     _imageView = [[UIImageView alloc] initWithFrame: CGRectZero];
+    self.backgroundColor = [UIColor colorWithWhite: 0.95 alpha: 1.0];
+    self.contentView.backgroundColor = self.backgroundColor;
+    _imageView.backgroundColor = self.backgroundColor;
+    
     [self.contentView addSubview: _imageView];
     
     return ( self );
@@ -79,11 +83,9 @@
     [super layoutSubviews];
     
     CGSize imageSize = _imageView.image.size;
-    CGRect frame = _imageView.frame;
-#define SCALE 0.95
-    CGRect bounds = CGRectMake(0,0,
-                               self.contentView.bounds.size.width,
-                               self.contentView.bounds.size.height);
+    
+#define INSET 20.0
+    CGRect bounds = CGRectInset( self.contentView.bounds, INSET, INSET);
     
     if ( (imageSize.width <= bounds.size.width) &&
         (imageSize.height <= bounds.size.height) )
@@ -96,6 +98,8 @@
     CGFloat vRatio = bounds.size.height / imageSize.height;
     CGFloat ratio = MAX(hRatio, vRatio);
     
+    [_imageView sizeToFit];
+    CGRect frame = _imageView.frame;
     frame.size.width = floorf(imageSize.width * ratio);
     frame.size.height = floorf(imageSize.height * ratio);
     frame.origin.x = floorf((bounds.size.width - frame.size.width) * 0.5);
