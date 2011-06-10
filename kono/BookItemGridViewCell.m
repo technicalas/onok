@@ -104,6 +104,9 @@
     frame.size.height = floorf(imageSize.height * ratio);
     frame.origin.x = floorf((bounds.size.width - frame.size.width) * 0.5);
     frame.origin.y = floorf((bounds.size.height - frame.size.height) * 0.5);
+    NSLog(@"origin x = %f", frame.origin.x);
+    NSLog(@"origin y = %f", frame.origin.y);
+    
     _imageView.frame = frame;
 }
 

@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
+#import "BigCatViewController.h"
+ 
 @interface BookstoreViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
     IBOutlet UITableView *categoryTableView;
     NSArray *categories;
+    NSMutableArray *bigCatVCs;
+    BigCatViewController *currBigCatVC;// to be replaced
 }
 
 @end

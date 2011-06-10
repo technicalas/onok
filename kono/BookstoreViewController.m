@@ -7,16 +7,18 @@
 //
 
 #import "BookstoreViewController.h"
-#import "RoundedRectView.h"
-#import "BookItemGridViewController.h"
-
+ 
 @interface BookstoreViewController ()
 @property (nonatomic, readonly)NSArray *categories;
+@property (nonatomic, readonly)NSMutableArray *bigCatVCs;
+@property (nonatomic, assign) BigCatViewController *currBigCatVC;
 @end
 
 @implementation BookstoreViewController
 @synthesize categories;
+@synthesize bigCatVCs, currBigCatVC;
 
+#define CATEGORY_SIZE 11
 - (NSArray *)categories
 {
     if (!categories) {
@@ -25,19 +27,23 @@
     return categories;
 }
 
+- (NSArray *)bigCatVCs
+{
+    if (!bigCatVCs) {
+        bigCatVCs = [[NSMutableArray array] retain];
+        for (int i=0; i<CATEGORY_SIZE; i++) {
+            [bigCatVCs addObject:[NSNull null]];
+        }
+    }
+    return bigCatVCs;
+}
+
 - (void)dealloc
 {
     [categories release];
+    [bigCatVCs release];
     [categoryTableView release];
     [super dealloc];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
@@ -121,16 +127,27 @@
 #pragma mark -
 #pragma mark Table view delegate
 
+- (BigCatViewController *)bigCatVCAtIndexPath:(NSIndexPath *)indexPath
+{
+    int index = indexPath.row;
+    if ([self.bigCatVCs objectAtIndex:index] == [NSNull null]) {
+        BigCatViewController *bigCatVC = [[BigCatViewController alloc] initWithNibName:@"BigCatViewController" bundle:nil];
+        [self.bigCatVCs replaceObjectAtIndex:index withObject:bigCatVC];
+        [bigCatVC release];
+    }
+    return [self.bigCatVCs objectAtIndex:index];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-	
-    BookItemGridViewController *bookItemVC = [[BookItemGridViewController alloc] init];
-     // ...
+    if (self.currBigCatVC) {
+        [self.currBigCatVC.view removeFromSuperview];
+    }
+    self.currBigCatVC = [self bigCatVCAtIndexPath:indexPath];
      // Pass the selected object to the new view controller.
-    bookItemVC.view.frame = CGRectMake(65, 48, 703, 912);
-    [self.view addSubview:bookItemVC.view];
-	 
+    self.currBigCatVC.view.frame = CGRectMake(65, 48, 703, 912);
+    [self.view addSubview:self.currBigCatVC.view];
 }
 
 @end
