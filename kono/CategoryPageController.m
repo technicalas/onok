@@ -47,8 +47,8 @@
 	}
 	self.viewControllers = controllers;
 	[controllers release];
-	
-    scrollView.frame = CGRectMake(0, 0, 703, 916);
+#define SWITCH_BAR_HEIGHT 44
+    scrollView.frame = CGRectMake(0, 0, 703, 916 -SWITCH_BAR_HEIGHT);// HARD CODE VALUE IS BAD
 	scrollView.pagingEnabled = YES;
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * kNumberOfPages, scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
