@@ -162,7 +162,6 @@
 			children = (
 				A5909E3313A0A0310057DD01 /* CustomView */,
 				A5F64B4113A135EA007F07D1 /* GridView */,
-				A5F64B4613A136AC007F07D1 /* BookItemGridView */,
 				A5909DFA13A069CF0057DD01 /* konoAppDelegate.h */,
 				A5909DFB13A069CF0057DD01 /* konoAppDelegate.m */,
 				A5909E0513A06A220057DD01 /* MainMenuViewController.h */,
@@ -209,6 +208,7 @@
 				A5B68AAB13A1FE3C002B7F2D /* BigCatViewController.h */,
 				A5B68AAC13A1FE3D002B7F2D /* BigCatViewController.m */,
 				A5B68AAD13A1FE3D002B7F2D /* BigCatViewController.xib */,
+				A5F64B4613A136AC007F07D1 /* BookItemGridView */,
 			);
 			name = Bookstore;
 			sourceTree = "<group>";

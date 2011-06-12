@@ -15,13 +15,14 @@
 
 - (void) loadView
 {
-    AQGridView * aView = [[AQGridView alloc] initWithFrame: CGRectMake(0.0, 0.0, 703, 912)];
+    AQGridView * aView = [[AQGridView alloc] initWithFrame: CGRectZero];
 	self.gridView = aView;
 	[aView release];
     self.gridView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
 	self.gridView.autoresizesSubviews = YES;
 	self.gridView.delegate = self;
 	self.gridView.dataSource = self;
+    
 }
 
 - (void)viewDidLoad

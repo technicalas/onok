@@ -77,6 +77,7 @@
     
     categoryTableView.dataSource = self;
     categoryTableView.delegate = self;
+    categoryTableView.backgroundColor = [UIColor colorWithWhite: 0.95 alpha: 1.0];
 }
 
 - (void)viewDidUnload
