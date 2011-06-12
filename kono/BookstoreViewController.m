@@ -7,11 +7,11 @@
 //
 
 #import "BookstoreViewController.h"
- 
+
 @interface BookstoreViewController ()
 @property (nonatomic, readonly)NSArray *categories;
 @property (nonatomic, readonly)NSMutableArray *bigCatVCs;
-@property (nonatomic, assign) BigCatViewController *currBigCatVC;
+@property (nonatomic, assign) CategoryPageController *currBigCatVC;
 @end
 
 @implementation BookstoreViewController
@@ -128,11 +128,11 @@
 #pragma mark -
 #pragma mark Table view delegate
 
-- (BigCatViewController *)bigCatVCAtIndexPath:(NSIndexPath *)indexPath
+- (CategoryPageController *)bigCatVCAtIndexPath:(NSIndexPath *)indexPath
 {
     int index = indexPath.row;
     if ([self.bigCatVCs objectAtIndex:index] == [NSNull null]) {
-        BigCatViewController *bigCatVC = [[BigCatViewController alloc] initWithNibName:@"BigCatViewController" bundle:nil];
+        CategoryPageController *bigCatVC = [[CategoryPageController alloc] initWithNibName:@"CategoryPageController" bundle:nil];
         [self.bigCatVCs replaceObjectAtIndex:index withObject:bigCatVC];
         [bigCatVC release];
     }
@@ -147,7 +147,7 @@
     }
     self.currBigCatVC = [self bigCatVCAtIndexPath:indexPath];
      // Pass the selected object to the new view controller.
-    self.currBigCatVC.view.frame = CGRectMake(65, 48, 703, 912);
+    self.currBigCatVC.view.frame = CGRectMake(65, 44, 703, 916);// CGRectMake(65, 44, 703, 916)
     [self.view addSubview:self.currBigCatVC.view];
 }
 

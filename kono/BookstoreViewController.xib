@@ -143,6 +143,10 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{0, 44}, {65, 916}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
+<<<<<<< HEAD
+=======
+						<reference key="NSWindow"/>
+>>>>>>> PageControl
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
