@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A53CFDE513A48E2900F2128E /* CategoryPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53CFDE313A48E2900F2128E /* CategoryPageController.m */; };
+		A53CFDE613A48E2900F2128E /* CategoryPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53CFDE413A48E2900F2128E /* CategoryPageController.xib */; };
 		A5909DEC13A069CF0057DD01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DEB13A069CF0057DD01 /* UIKit.framework */; };
 		A5909DEE13A069CF0057DD01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DED13A069CF0057DD01 /* Foundation.framework */; };
 		A5909DF013A069CF0057DD01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DEF13A069CF0057DD01 /* CoreGraphics.framework */; };
@@ -47,6 +49,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A53CFDE213A48E2900F2128E /* CategoryPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPageController.h; sourceTree = "<group>"; };
+		A53CFDE313A48E2900F2128E /* CategoryPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPageController.m; sourceTree = "<group>"; };
+		A53CFDE413A48E2900F2128E /* CategoryPageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryPageController.xib; sourceTree = "<group>"; };
 		A5909DE713A069CE0057DD01 /* kono.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kono.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5909DEB13A069CF0057DD01 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A5909DED13A069CF0057DD01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -198,6 +203,9 @@
 				A5909E0A13A071A00057DD01 /* BookstoreViewController.h */,
 				A5909E0B13A071A00057DD01 /* BookstoreViewController.m */,
 				A5909E0C13A071A00057DD01 /* BookstoreViewController.xib */,
+				A53CFDE213A48E2900F2128E /* CategoryPageController.h */,
+				A53CFDE313A48E2900F2128E /* CategoryPageController.m */,
+				A53CFDE413A48E2900F2128E /* CategoryPageController.xib */,
 				A5B68AAB13A1FE3C002B7F2D /* BigCatViewController.h */,
 				A5B68AAC13A1FE3D002B7F2D /* BigCatViewController.m */,
 				A5B68AAD13A1FE3D002B7F2D /* BigCatViewController.xib */,
@@ -328,6 +336,7 @@
 				A5B68A9B13A1D0BD002B7F2D /* 2535.jpeg in Resources */,
 				A5B68A9C13A1D0BD002B7F2D /* bicycle.jpeg in Resources */,
 				A5B68AAF13A1FE3D002B7F2D /* BigCatViewController.xib in Resources */,
+				A53CFDE613A48E2900F2128E /* CategoryPageController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +365,7 @@
 				A5B68A8B13A1CF34002B7F2D /* NSIndexSet+AQIsSetContiguous.m in Sources */,
 				A5B68A8C13A1CF34002B7F2D /* UIColor+AQGridView.m in Sources */,
 				A5B68AAE13A1FE3D002B7F2D /* BigCatViewController.m in Sources */,
+				A53CFDE513A48E2900F2128E /* CategoryPageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

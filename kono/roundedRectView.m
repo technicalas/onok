@@ -29,8 +29,8 @@
 	CGRect rrect = [self bounds];
 	
 	// want to preset the border of the rect 
-    CGFloat xoffset = 2.0;
-    CGFloat yoffset = 2.0;
+    CGFloat xoffset = 3.0;
+    CGFloat yoffset = 3.0;
 	
 	rrect.size.width = rrect.size.width - 2*xoffset ;   
 	rrect.size.height = rrect.size.height - 2*yoffset; 
@@ -40,7 +40,7 @@
 	CGContextSetAllowsAntialiasing(context, true);
 	CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:0.2 green:0.8 blue:0.2 alpha:1.0].CGColor);
 	
-	CGFloat radius = 10.0;
+	CGFloat radius = 3.0;
 	
 	CGFloat minx = CGRectGetMinX(rrect), midx = CGRectGetMidX(rrect), maxx = CGRectGetMaxX(rrect);
 	CGFloat miny = CGRectGetMinY(rrect), midy = CGRectGetMidY(rrect), maxy = CGRectGetMaxY(rrect);
