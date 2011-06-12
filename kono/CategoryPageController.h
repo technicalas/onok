@@ -10,12 +10,12 @@
 #import "BookItemGridViewController.h"
 
 @interface CategoryPageController : UIViewController <UIScrollViewDelegate>{
-    BookItemGridViewController *bookItemGridVC;
-    IBOutlet UIScrollView *scrollView;
+    
+    UIScrollView *scrollView;
     int kNumberOfPages;
     NSMutableArray *viewControllers;
 }
-@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, retain) NSMutableArray *viewControllers;
 // page control related
 - (void)loadScrollViewWithPage:(int)page;

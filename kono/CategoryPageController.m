@@ -17,14 +17,17 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        bookItemGridVC = [[BookItemGridViewController alloc] init];
+        
+        self.scrollView =  [[[UIScrollView alloc] init] autorelease];
+        [self.view addSubview:self.scrollView];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [bookItemGridVC release];
+    [viewControllers release];
+    [scrollView release];
     [super dealloc];
 }
 
@@ -45,6 +48,7 @@
 	self.viewControllers = controllers;
 	[controllers release];
 	
+    scrollView.frame = CGRectMake(0, 0, 703, 916);
 	scrollView.pagingEnabled = YES;
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * kNumberOfPages, scrollView.frame.size.height);
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -56,6 +60,38 @@
     [self loadScrollViewWithPage:1];
 	
 }
+
+- (void)loadScrollViewWithPage:(int)page {
+    if (page < 0) return;
+    if (page >= kNumberOfPages) return;
+	
+    BookItemGridViewController *controller = [viewControllers objectAtIndex:page];
+    if ((NSNull *)controller == [NSNull null]) {
+        controller = [[BookItemGridViewController alloc] init];
+        [viewControllers replaceObjectAtIndex:page withObject:controller];
+        [controller release];
+    }
+	
+    if (nil == controller.view.superview) {
+        CGRect frame = scrollView.frame;
+        frame.origin.x = frame.size.width * page;
+        frame.origin.y = 0;
+        controller.view.frame = frame;
+        [scrollView addSubview:controller.view];
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)sender {
+    
+    CGFloat pageWidth = scrollView.frame.size.width;
+    int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    
+    [self loadScrollViewWithPage:page - 1];
+    [self loadScrollViewWithPage:page];
+    [self loadScrollViewWithPage:page + 1];
+	
+}
+
 
 - (void)viewDidUnload
 {
