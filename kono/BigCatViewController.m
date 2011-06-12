@@ -28,12 +28,13 @@
 
 
 #pragma mark - View lifecycle
-
+#define SWITCH_BAR_HEIGHT 44
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    bookItemGridVC.view.frame = self.view.bounds;
+    bookItemGridVC.view.frame = CGRectMake(0, 0, self.view.bounds.size.width,
+                             self.view.bounds.size.height - SWITCH_BAR_HEIGHT);
     [self.view addSubview:bookItemGridVC.view];
 }
 

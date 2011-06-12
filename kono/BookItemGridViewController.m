@@ -22,7 +22,7 @@
 	self.gridView.autoresizesSubviews = YES;
 	self.gridView.delegate = self;
 	self.gridView.dataSource = self;
-    
+    self.gridView.backgroundColor = [UIColor colorWithRed:0.8 green:0.93 blue:1.0 alpha:1.0];// cute sky blue
 }
 
 - (void)viewDidLoad
