@@ -66,7 +66,6 @@
 
 - (NSUInteger) numberOfItemsInGridView: (AQGridView *) aGridView
 {
-    NSLog(@"count = %d", [_imageNames count]);
     return ( [_imageNames count] );
 }
 

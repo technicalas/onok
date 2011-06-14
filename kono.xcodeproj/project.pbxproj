@@ -40,8 +40,6 @@
 		A5B68A9813A1D0A3002B7F2D /* precious.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5B68A9213A1D0A3002B7F2D /* precious.jpeg */; };
 		A5B68A9B13A1D0BD002B7F2D /* 2535.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5B68A9913A1D0BD002B7F2D /* 2535.jpeg */; };
 		A5B68A9C13A1D0BD002B7F2D /* bicycle.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5B68A9A13A1D0BD002B7F2D /* bicycle.jpeg */; };
-		A5B68AAE13A1FE3D002B7F2D /* BigCatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B68AAC13A1FE3D002B7F2D /* BigCatViewController.m */; };
-		A5B68AAF13A1FE3D002B7F2D /* BigCatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5B68AAD13A1FE3D002B7F2D /* BigCatViewController.xib */; };
 		A5F64B4913A136F3007F07D1 /* BookItemGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F64B4813A136F3007F07D1 /* BookItemGridViewCell.m */; };
 		A5F64B5013A13A2C007F07D1 /* BookItemGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F64B4E13A13A2C007F07D1 /* BookItemGridViewController.m */; };
 		A5F64B5A13A13C3E007F07D1 /* money.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5F64B5513A13C3E007F07D1 /* money.jpeg */; };
@@ -103,9 +101,6 @@
 		A5B68A9213A1D0A3002B7F2D /* precious.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = precious.jpeg; path = images/precious.jpeg; sourceTree = "<group>"; };
 		A5B68A9913A1D0BD002B7F2D /* 2535.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2535.jpeg; path = images/2535.jpeg; sourceTree = "<group>"; };
 		A5B68A9A13A1D0BD002B7F2D /* bicycle.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bicycle.jpeg; path = images/bicycle.jpeg; sourceTree = "<group>"; };
-		A5B68AAB13A1FE3C002B7F2D /* BigCatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigCatViewController.h; sourceTree = "<group>"; };
-		A5B68AAC13A1FE3D002B7F2D /* BigCatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigCatViewController.m; sourceTree = "<group>"; };
-		A5B68AAD13A1FE3D002B7F2D /* BigCatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigCatViewController.xib; sourceTree = "<group>"; };
 		A5F64B4713A136F3007F07D1 /* BookItemGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemGridViewCell.h; sourceTree = "<group>"; };
 		A5F64B4813A136F3007F07D1 /* BookItemGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookItemGridViewCell.m; sourceTree = "<group>"; };
 		A5F64B4D13A13A2C007F07D1 /* BookItemGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemGridViewController.h; sourceTree = "<group>"; };
@@ -205,9 +200,6 @@
 				A53CFDE213A48E2900F2128E /* CategoryPageController.h */,
 				A53CFDE313A48E2900F2128E /* CategoryPageController.m */,
 				A53CFDE413A48E2900F2128E /* CategoryPageController.xib */,
-				A5B68AAB13A1FE3C002B7F2D /* BigCatViewController.h */,
-				A5B68AAC13A1FE3D002B7F2D /* BigCatViewController.m */,
-				A5B68AAD13A1FE3D002B7F2D /* BigCatViewController.xib */,
 				A5F64B4613A136AC007F07D1 /* BookItemGridView */,
 			);
 			name = Bookstore;
@@ -335,7 +327,6 @@
 				A5B68A9813A1D0A3002B7F2D /* precious.jpeg in Resources */,
 				A5B68A9B13A1D0BD002B7F2D /* 2535.jpeg in Resources */,
 				A5B68A9C13A1D0BD002B7F2D /* bicycle.jpeg in Resources */,
-				A5B68AAF13A1FE3D002B7F2D /* BigCatViewController.xib in Resources */,
 				A53CFDE613A48E2900F2128E /* CategoryPageController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,7 +355,6 @@
 				A5B68A8A13A1CF34002B7F2D /* NSIndexSet+AQIndexesOutsideSet.m in Sources */,
 				A5B68A8B13A1CF34002B7F2D /* NSIndexSet+AQIsSetContiguous.m in Sources */,
 				A5B68A8C13A1CF34002B7F2D /* UIColor+AQGridView.m in Sources */,
-				A5B68AAE13A1FE3D002B7F2D /* BigCatViewController.m in Sources */,
 				A53CFDE513A48E2900F2128E /* CategoryPageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

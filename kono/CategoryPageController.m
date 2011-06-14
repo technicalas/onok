@@ -48,14 +48,17 @@
 	self.viewControllers = controllers;
 	[controllers release];
 #define SWITCH_BAR_HEIGHT 44
-    scrollView.frame = CGRectMake(0, 0, 703, 916 -SWITCH_BAR_HEIGHT);// HARD CODE VALUE IS BAD
-	scrollView.pagingEnabled = YES;
+#define SCROLL_WIDTH 703
+#define SCROLL_HEIGHT 916
+   
+    self.scrollView.frame = CGRectMake(0, 0, SCROLL_WIDTH, SCROLL_HEIGHT -SWITCH_BAR_HEIGHT);// HARD CODE VALUE IS BAD
+	self.scrollView.pagingEnabled = YES;
     //CONTENT SIZE IS SUBJECT TO CHANGE
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * kNumberOfPages, scrollView.frame.size.height);
-    scrollView.showsHorizontalScrollIndicator = NO;
-    scrollView.showsVerticalScrollIndicator = NO;
-    scrollView.scrollsToTop = NO;
-    scrollView.delegate = self;
+    self.scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * kNumberOfPages, scrollView.frame.size.height);
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.scrollsToTop = NO;
+    self.scrollView.delegate = self;
 	
 	[self loadScrollViewWithPage:0];
     [self loadScrollViewWithPage:1];
@@ -69,16 +72,16 @@
     BookItemGridViewController *controller = [viewControllers objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null]) {
         controller = [[BookItemGridViewController alloc] init];
-        [viewControllers replaceObjectAtIndex:page withObject:controller];
+        [self.viewControllers replaceObjectAtIndex:page withObject:controller];
         [controller release];
     }
 	
     if (nil == controller.view.superview) {
-        CGRect frame = scrollView.frame;
+        CGRect frame = self.scrollView.frame;
         frame.origin.x = frame.size.width * page;
         frame.origin.y = 0;
         controller.view.frame = frame;
-        [scrollView addSubview:controller.view];
+        [self.scrollView addSubview:controller.view];
     }
 }
 
@@ -99,6 +102,8 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.scrollView = nil;
+    self.viewControllers = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -47,7 +47,6 @@
         return ( nil );
     
     _imageView = [[UIImageView alloc] initWithFrame: CGRectZero];
-    //self.backgroundColor = [UIColor colorWithWhite: 0.95 alpha: 1.0];
     self.backgroundColor = [UIColor clearColor];
     self.contentView.backgroundColor = self.backgroundColor;
     _imageView.backgroundColor = self.backgroundColor;

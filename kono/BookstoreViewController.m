@@ -147,7 +147,7 @@
     }
     self.currBigCatVC = [self bigCatVCAtIndexPath:indexPath];
      // Pass the selected object to the new view controller.
-    self.currBigCatVC.view.frame = CGRectMake(65, 44, 703, 916);// CGRectMake(65, 44, 703, 916)
+    self.currBigCatVC.view.frame = CGRectMake(65, 44, 703, 916);     
     [self.view addSubview:self.currBigCatVC.view];
 }
 
