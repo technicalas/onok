@@ -71,6 +71,7 @@
 {
 	[super viewDidLoad];
 	[self.gridView reloadData];
+    [self.gridView viewDidRotate];
 	
 	_popoverShowing = NO;
 }

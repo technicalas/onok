@@ -70,8 +70,8 @@
     return ( [_imageNames count] );
 }
 
-#define BOOK_ITEM_WIDTH  250
-#define BOOK_ITEM_HEIGHT 334
+#define BOOK_ITEM_WIDTH  175//250
+#define BOOK_ITEM_HEIGHT 234//334
 - (AQGridViewCell *) gridView: (AQGridView *) aGridView cellForItemAtIndex: (NSUInteger) index
 {
     static NSString * PlainCellIdentifier = @"PlainCellIdentifier";
@@ -92,12 +92,9 @@
     return ( cell );
 }
 
-#define GRID_CELL_WIDTH  175
-#define GRID_CELL_HEIGHT 234
-
 - (CGSize) portraitGridCellSizeForGridView: (AQGridView *) aGridView
 {
-    return ( CGSizeMake(GRID_CELL_WIDTH, GRID_CELL_HEIGHT) );
+    return ( CGSizeMake(BOOK_ITEM_WIDTH, BOOK_ITEM_HEIGHT) );
 }
 
 #pragma mark -
