@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A53CFDE513A48E2900F2128E /* CategoryPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53CFDE313A48E2900F2128E /* CategoryPageController.m */; };
-		A53CFDE613A48E2900F2128E /* CategoryPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53CFDE413A48E2900F2128E /* CategoryPageController.xib */; };
+		A506A13E13A6F8A900BF6B93 /* icon-72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = A506A13D13A6F8A900BF6B93 /* icon-72x72.png */; };
 		A5909DEC13A069CF0057DD01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DEB13A069CF0057DD01 /* UIKit.framework */; };
 		A5909DEE13A069CF0057DD01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DED13A069CF0057DD01 /* Foundation.framework */; };
 		A5909DF013A069CF0057DD01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DEF13A069CF0057DD01 /* CoreGraphics.framework */; };
@@ -47,9 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A53CFDE213A48E2900F2128E /* CategoryPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPageController.h; sourceTree = "<group>"; };
-		A53CFDE313A48E2900F2128E /* CategoryPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPageController.m; sourceTree = "<group>"; };
-		A53CFDE413A48E2900F2128E /* CategoryPageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryPageController.xib; sourceTree = "<group>"; };
+		A506A13D13A6F8A900BF6B93 /* icon-72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72x72.png"; sourceTree = "<group>"; };
 		A5909DE713A069CE0057DD01 /* kono.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kono.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5909DEB13A069CF0057DD01 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A5909DED13A069CF0057DD01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -124,6 +121,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A506A13C13A6F6B600BF6B93 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A5909DFA13A069CF0057DD01 /* konoAppDelegate.h */,
+				A5909DFB13A069CF0057DD01 /* konoAppDelegate.m */,
+				A5909E0513A06A220057DD01 /* MainMenuViewController.h */,
+				A5909E0613A06A220057DD01 /* MainMenuViewController.m */,
+				A5909E0713A06A220057DD01 /* MainMenuViewController.xib */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		A5909DDC13A069CE0057DD01 = {
 			isa = PBXGroup;
 			children = (
@@ -157,11 +166,7 @@
 			children = (
 				A5909E3313A0A0310057DD01 /* CustomView */,
 				A5F64B4113A135EA007F07D1 /* GridView */,
-				A5909DFA13A069CF0057DD01 /* konoAppDelegate.h */,
-				A5909DFB13A069CF0057DD01 /* konoAppDelegate.m */,
-				A5909E0513A06A220057DD01 /* MainMenuViewController.h */,
-				A5909E0613A06A220057DD01 /* MainMenuViewController.m */,
-				A5909E0713A06A220057DD01 /* MainMenuViewController.xib */,
+				A506A13C13A6F6B600BF6B93 /* Main */,
 				A5B68AB113A1FE48002B7F2D /* Bookstore */,
 				A5909DFD13A069CF0057DD01 /* MainWindow.xib */,
 				A5F64B5213A13BE3007F07D1 /* Resources */,
@@ -197,9 +202,6 @@
 				A5909E0A13A071A00057DD01 /* BookstoreViewController.h */,
 				A5909E0B13A071A00057DD01 /* BookstoreViewController.m */,
 				A5909E0C13A071A00057DD01 /* BookstoreViewController.xib */,
-				A53CFDE213A48E2900F2128E /* CategoryPageController.h */,
-				A53CFDE313A48E2900F2128E /* CategoryPageController.m */,
-				A53CFDE413A48E2900F2128E /* CategoryPageController.xib */,
 				A5F64B4613A136AC007F07D1 /* BookItemGridView */,
 			);
 			name = Bookstore;
@@ -249,6 +251,7 @@
 		A5F64B5213A13BE3007F07D1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A506A13D13A6F8A900BF6B93 /* icon-72x72.png */,
 				A5B68A9913A1D0BD002B7F2D /* 2535.jpeg */,
 				A5B68A9A13A1D0BD002B7F2D /* bicycle.jpeg */,
 				A5B68A8D13A1D0A3002B7F2D /* 30.jpeg */,
@@ -327,7 +330,7 @@
 				A5B68A9813A1D0A3002B7F2D /* precious.jpeg in Resources */,
 				A5B68A9B13A1D0BD002B7F2D /* 2535.jpeg in Resources */,
 				A5B68A9C13A1D0BD002B7F2D /* bicycle.jpeg in Resources */,
-				A53CFDE613A48E2900F2128E /* CategoryPageController.xib in Resources */,
+				A506A13E13A6F8A900BF6B93 /* icon-72x72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +358,6 @@
 				A5B68A8A13A1CF34002B7F2D /* NSIndexSet+AQIndexesOutsideSet.m in Sources */,
 				A5B68A8B13A1CF34002B7F2D /* NSIndexSet+AQIsSetContiguous.m in Sources */,
 				A5B68A8C13A1CF34002B7F2D /* UIColor+AQGridView.m in Sources */,
-				A53CFDE513A48E2900F2128E /* CategoryPageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

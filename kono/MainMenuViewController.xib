@@ -40,12 +40,12 @@
 			</object>
 			<object class="IBUIView" id="766721923">
 				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">292</int>
+				<int key="NSvFlags">256</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUIView" id="161914920">
 						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">274</int>
+						<int key="NSvFlags">290</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUIButton" id="139720878">
@@ -94,10 +94,11 @@
 							</object>
 							<object class="IBUILabel" id="207727548">
 								<reference key="NSNextResponder" ref="161914920"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{338, 2}, {92, 43}}</string>
+								<int key="NSvFlags">293</int>
+								<string key="NSFrame">{{338, 1}, {92, 43}}</string>
 								<reference key="NSSuperview" ref="161914920"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -113,9 +114,10 @@
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
+								<int key="IBUITextAlignment">1</int>
 							</object>
 						</object>
-						<string key="NSFrame">{{0, 20}, {768, 48}}</string>
+						<string key="NSFrameSize">{768, 45}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="139720878"/>
@@ -123,6 +125,7 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4zNzE2NTY1ODY4IDAuNzUgMC4zMTAwMjU4MTI1AA</bytes>
 						</object>
+						<int key="IBUIContentMode">4</int>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
 				</object>
@@ -200,8 +203,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="139720878"/>
-							<reference ref="207727548"/>
 							<reference ref="806016799"/>
+							<reference ref="207727548"/>
 						</object>
 						<reference key="parent" ref="766721923"/>
 					</object>

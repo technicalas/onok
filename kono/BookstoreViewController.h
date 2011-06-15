@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BigCatViewController.h"
-#import "CategoryPageController.h"
- 
+#import "BookItemGridViewController.h"
+
 @interface BookstoreViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
     IBOutlet UITableView *categoryTableView;
     NSArray *categories;
     NSMutableArray *bigCatVCs;
-    CategoryPageController *currBigCatVC;// to be replaced
+    BookItemGridViewController *currBigCatVC;// to be replaced
     
 }
 

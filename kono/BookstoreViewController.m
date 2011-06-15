@@ -11,7 +11,7 @@
 @interface BookstoreViewController ()
 @property (nonatomic, readonly)NSArray *categories;
 @property (nonatomic, readonly)NSMutableArray *bigCatVCs;
-@property (nonatomic, assign) CategoryPageController *currBigCatVC;
+@property (nonatomic, assign) BookItemGridViewController *currBigCatVC;
 @end
 
 @implementation BookstoreViewController
@@ -22,6 +22,7 @@
 - (NSArray *)categories
 {
     if (!categories) {
+        // replace with database content
         categories = [[NSArray alloc] initWithObjects:@"女性", @"娛樂", @"家居", @"新聞", @"旅行",                                                                  @"汽車", @"生活", @"男性", @"科技", @"藝術", @"運動",nil];
     }
     return categories;
@@ -52,29 +53,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    /*
-    CGRect frame =  CGRectMake(0.0, 0.0, 120, 956);
-    RoundedRectView *rrv = [[RoundedRectView alloc] initWithFrame:frame];
-    rrv.edgeWidth = 4.0;
-    rrv.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:rrv];
-    [rrv release];
-    
-#define OFFSET 2.0
-    CGFloat offset = rrv.edgeWidth + OFFSET;
-    CGRect tableFrame = CGRectMake(frame.origin.x + offset, 
-                                   frame.origin.y + offset,
-                                   frame.size.width - offset*2,
-                                   frame.size.height - offset*2);
-    categoryTableView = [[UITableView alloc] initWithFrame:tableFrame];
-    categoryTableView.dataSource = self;
-    categoryTableView.delegate = self;
-    categoryTableView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.8 alpha:1.0];
-    
-    [self.view addSubview:categoryTableView];
-    */
-    
     categoryTableView.dataSource = self;
     categoryTableView.delegate = self;
     categoryTableView.backgroundColor = [UIColor colorWithWhite: 0.95 alpha: 1.0];
@@ -128,11 +106,11 @@
 #pragma mark -
 #pragma mark Table view delegate
 
-- (CategoryPageController *)bigCatVCAtIndexPath:(NSIndexPath *)indexPath
+- (BookItemGridViewController *)bigCatVCAtIndexPath:(NSIndexPath *)indexPath
 {
     int index = indexPath.row;
     if ([self.bigCatVCs objectAtIndex:index] == [NSNull null]) {
-        CategoryPageController *bigCatVC = [[CategoryPageController alloc] initWithNibName:@"CategoryPageController" bundle:nil];
+        BookItemGridViewController *bigCatVC = [[BookItemGridViewController alloc] initWithNibName:@"CategoryPageController" bundle:nil];
         [self.bigCatVCs replaceObjectAtIndex:index withObject:bigCatVC];
         [bigCatVC release];
     }
@@ -147,7 +125,7 @@
     }
     self.currBigCatVC = [self bigCatVCAtIndexPath:indexPath];
      // Pass the selected object to the new view controller.
-    self.currBigCatVC.view.frame = CGRectMake(65, 44, 703, 916);     
+    self.currBigCatVC.view.frame = CGRectMake(130, 44, 638, 916);  //44   
     [self.view addSubview:self.currBigCatVC.view];
 }
 

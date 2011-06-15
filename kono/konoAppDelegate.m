@@ -12,11 +12,15 @@
 
 
 @synthesize window=_window;
+#define  STATUS_BAR_HEIGHT 20
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    MainMenuViewController *mmvc = [[MainMenuViewController alloc] init];
+    MainMenuViewController *mmvc = [[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
+    mmvc.view.frame = CGRectMake(0, STATUS_BAR_HEIGHT, [[UIScreen mainScreen] applicationFrame].size.width, [[UIScreen mainScreen] applicationFrame].size.height - STATUS_BAR_HEIGHT); 
+    
+
     [self.window addSubview:mmvc.view];
     [self.window makeKeyAndVisible];
     return YES;
