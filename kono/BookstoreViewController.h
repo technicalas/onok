@@ -14,7 +14,7 @@
     NSArray *categories;
     NSMutableArray *bigCatVCs;
     BookItemGridViewController *currBigCatVC;// to be replaced
-    
+    IBOutlet UIView *space;
 }
-
+@property (nonatomic, retain) UIView *space;
 @end

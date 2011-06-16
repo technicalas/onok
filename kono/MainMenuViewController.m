@@ -30,13 +30,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-     self.bookstorevc = [[BookstoreViewController alloc] initWithNibName:@"BookstoreViewController" bundle:nil];
-    [bookstorevc release];     
+    UIInterfaceOrientation or = [UIApplication sharedApplication].statusBarOrientation;
+    if (UIInterfaceOrientationIsPortrait(or)) {
+        self.view.frame = CGRectMake(0, STATUS_BAR_HEIGHT, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height);
+    } 
+    
+    self.bookstorevc = [[BookstoreViewController alloc] initWithNibName:@"BookstoreViewController" bundle:nil];
+    [bookstorevc release];   
+    [self.space addSubview:self.bookstorevc.view];
 }
 
 - (IBAction) bookstoreButtonPressed
 {
-    [self.space addSubview:self.bookstorevc.view];
+    if ([self.bookstorevc.view superview] == nil) {
+        [self.space addSubview:self.bookstorevc.view];
+    }
 }
 
 - (void)viewDidUnload

@@ -12,7 +12,6 @@
 
 
 @synthesize window=_window;
-#define  STATUS_BAR_HEIGHT 20
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

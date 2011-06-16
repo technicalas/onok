@@ -11,12 +11,13 @@
 @interface BookstoreViewController ()
 @property (nonatomic, readonly)NSArray *categories;
 @property (nonatomic, readonly)NSMutableArray *bigCatVCs;
-@property (nonatomic, assign) BookItemGridViewController *currBigCatVC;
+@property (nonatomic, assign)BookItemGridViewController *currBigCatVC;
 @end
 
 @implementation BookstoreViewController
 @synthesize categories;
 @synthesize bigCatVCs, currBigCatVC;
+@synthesize space;
 
 #define CATEGORY_SIZE 11
 - (NSArray *)categories
@@ -125,8 +126,8 @@
     }
     self.currBigCatVC = [self bigCatVCAtIndexPath:indexPath];
      // Pass the selected object to the new view controller.
-    self.currBigCatVC.view.frame = CGRectMake(130, 44, 638, 916);  //44   
-    [self.view addSubview:self.currBigCatVC.view];
+    self.currBigCatVC.view.frame = self.space.bounds;  //44  
+    [self.space addSubview:self.currBigCatVC.view];
 }
 
 @end
