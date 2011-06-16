@@ -10,6 +10,7 @@
  
 @implementation MainMenuViewController
 @synthesize bookstorevc;
+@synthesize space;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,19 +25,18 @@
 #define SCREEN_PORTRAIT_WIDTH 768
 #define SCREEN_PORTRAIT_HEIGHT 1024
 #define TOP_BAR_PORTRAIT_HEIGHT 45
+#define STATUS_BAR_HEIGHT 20
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
      self.bookstorevc = [[BookstoreViewController alloc] initWithNibName:@"BookstoreViewController" bundle:nil];
-    [bookstorevc release];
-    self.bookstorevc.view.frame = CGRectMake(0, TOP_BAR_PORTRAIT_HEIGHT, SCREEN_PORTRAIT_WIDTH , SCREEN_PORTRAIT_HEIGHT - TOP_BAR_PORTRAIT_HEIGHT); 
-   
+    [bookstorevc release];     
 }
 
 - (IBAction) bookstoreButtonPressed
 {
-    [self.view addSubview:self.bookstorevc.view];
+    [self.space addSubview:self.bookstorevc.view];
 }
 
 - (void)viewDidUnload

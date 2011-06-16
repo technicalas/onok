@@ -11,7 +11,9 @@
 
 @interface MainMenuViewController : UIViewController {
     BookstoreViewController *bookstorevc;
+    IBOutlet UIView *space;
 }
 @property (nonatomic, retain) BookstoreViewController *bookstorevc;
+@property (nonatomic, retain) UIView *space;
 - (IBAction) bookstoreButtonPressed;
 @end
