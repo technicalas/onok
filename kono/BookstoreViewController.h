@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "BookItemGridViewController.h"
+#import "BookstoreData.h"
 
 @interface BookstoreViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
     IBOutlet UITableView *categoryTableView;
-    NSArray *categories;
-    NSMutableArray *bigCatVCs;
-    BookItemGridViewController *currBigCatVC;// to be replaced
     IBOutlet UIView *space;
+    NSArray *categories;
+    NSArray *categoriesCh;
+    NSMutableArray *bigCatVCs;
+    BookItemGridViewController *currBigCatVC;
+    
+    BookstoreData *brain;
+    NSDictionary *categoryDictionary;
 }
 @property (nonatomic, retain) UIView *space;
 @end

@@ -10,23 +10,51 @@
 
 @interface BookstoreViewController ()
 @property (nonatomic, readonly)NSArray *categories;
+@property (nonatomic, readonly)NSArray *categoriesCh;
+@property (nonatomic, readonly)NSDictionary *categoryDictionary;
 @property (nonatomic, readonly)NSMutableArray *bigCatVCs;
 @property (nonatomic, assign)BookItemGridViewController *currBigCatVC;
 @end
 
 @implementation BookstoreViewController
-@synthesize categories;
+@synthesize categories, categoriesCh, categoryDictionary;
 @synthesize bigCatVCs, currBigCatVC;
 @synthesize space;
 
 #define CATEGORY_SIZE 11
 - (NSArray *)categories
 {
+    /*
     if (!categories) {
         // replace with database content
+         
         categories = [[NSArray alloc] initWithObjects:@"女性", @"娛樂", @"家居", @"新聞", @"旅行",                                                                  @"汽車", @"生活", @"男性", @"科技", @"藝術", @"運動",nil];
     }
     return categories;
+     */
+    return brain.categories;
+}
+
+- (NSArray *)categoriesCh
+{
+    if (!categoriesCh){
+        NSMutableArray *arr = [NSMutableArray array];
+        for (id name in self.categories) {
+            [arr addObject:[self.categoryDictionary objectForKey:name]];
+        }
+        categoriesCh = [arr retain];
+    }
+    return categoriesCh;
+}
+
+- (NSDictionary *)categoryDictionary
+{
+    if (!categoryDictionary) {
+        NSArray *ch = [NSArray arrayWithObjects:@"財經企管", @"新聞時事", @"運動競技", nil];
+        NSArray *en = [NSArray arrayWithObjects:@"finance",@"news", @"sports", nil];
+        categoryDictionary = [[NSDictionary alloc] initWithObjects:ch forKeys:en];
+    }
+    return categoryDictionary;
 }
 
 - (NSArray *)bigCatVCs
@@ -42,7 +70,10 @@
 
 - (void)dealloc
 {
+    [brain release];
     [categories release];
+    [categoriesCh release];
+    [categoryDictionary release];
     [bigCatVCs release];
     [categoryTableView release];
     [super dealloc];
@@ -57,6 +88,9 @@
     categoryTableView.dataSource = self;
     categoryTableView.delegate = self;
     categoryTableView.backgroundColor = [UIColor colorWithWhite: 0.95 alpha: 1.0];
+    
+    //generate data
+    brain = [[BookstoreData alloc] init];
 }
 
 - (void)viewDidUnload
@@ -88,7 +122,7 @@
 
 - (NSString *)categoryAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.categories objectAtIndex:indexPath.row];
+    return [self.categoriesCh objectAtIndex:indexPath.row];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

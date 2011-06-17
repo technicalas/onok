@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A506A13E13A6F8A900BF6B93 /* icon-72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = A506A13D13A6F8A900BF6B93 /* icon-72x72.png */; };
+		A53F66B613AB0A0C00F635A0 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A53F66B513AB0A0C00F635A0 /* libsqlite3.0.dylib */; };
+		A53F66B913AB0A4000F635A0 /* BookCategory.sql in Resources */ = {isa = PBXBuildFile; fileRef = A53F66B813AB0A4000F635A0 /* BookCategory.sql */; };
+		A53F66BC13AB0B9D00F635A0 /* BookstoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F66BB13AB0B9D00F635A0 /* BookstoreData.m */; };
 		A5909DEC13A069CF0057DD01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DEB13A069CF0057DD01 /* UIKit.framework */; };
 		A5909DEE13A069CF0057DD01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DED13A069CF0057DD01 /* Foundation.framework */; };
 		A5909DF013A069CF0057DD01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DEF13A069CF0057DD01 /* CoreGraphics.framework */; };
@@ -47,6 +50,10 @@
 
 /* Begin PBXFileReference section */
 		A506A13D13A6F8A900BF6B93 /* icon-72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72x72.png"; sourceTree = "<group>"; };
+		A53F66B513AB0A0C00F635A0 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		A53F66B813AB0A4000F635A0 /* BookCategory.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = BookCategory.sql; path = resources/BookCategory.sql; sourceTree = "<group>"; };
+		A53F66BA13AB0B9D00F635A0 /* BookstoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookstoreData.h; sourceTree = "<group>"; };
+		A53F66BB13AB0B9D00F635A0 /* BookstoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookstoreData.m; sourceTree = "<group>"; };
 		A5909DE713A069CE0057DD01 /* kono.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kono.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5909DEB13A069CF0057DD01 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A5909DED13A069CF0057DD01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53F66B613AB0A0C00F635A0 /* libsqlite3.0.dylib in Frameworks */,
 				A5AD796113A19CD6007647F3 /* QuartzCore.framework in Frameworks */,
 				A5909DEC13A069CF0057DD01 /* UIKit.framework in Frameworks */,
 				A5909DEE13A069CF0057DD01 /* Foundation.framework in Frameworks */,
@@ -152,6 +160,7 @@
 		A5909DEA13A069CF0057DD01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A53F66B513AB0A0C00F635A0 /* libsqlite3.0.dylib */,
 				A5AD796013A19CD5007647F3 /* QuartzCore.framework */,
 				A5909DEB13A069CF0057DD01 /* UIKit.framework */,
 				A5909DED13A069CF0057DD01 /* Foundation.framework */,
@@ -199,6 +208,8 @@
 		A5B68AB113A1FE48002B7F2D /* Bookstore */ = {
 			isa = PBXGroup;
 			children = (
+				A53F66BA13AB0B9D00F635A0 /* BookstoreData.h */,
+				A53F66BB13AB0B9D00F635A0 /* BookstoreData.m */,
 				A5909E0A13A071A00057DD01 /* BookstoreViewController.h */,
 				A5909E0B13A071A00057DD01 /* BookstoreViewController.m */,
 				A5909E0C13A071A00057DD01 /* BookstoreViewController.xib */,
@@ -251,6 +262,7 @@
 		A5F64B5213A13BE3007F07D1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A53F66B813AB0A4000F635A0 /* BookCategory.sql */,
 				A506A13D13A6F8A900BF6B93 /* icon-72x72.png */,
 				A5B68A9913A1D0BD002B7F2D /* 2535.jpeg */,
 				A5B68A9A13A1D0BD002B7F2D /* bicycle.jpeg */,
@@ -331,6 +343,7 @@
 				A5B68A9B13A1D0BD002B7F2D /* 2535.jpeg in Resources */,
 				A5B68A9C13A1D0BD002B7F2D /* bicycle.jpeg in Resources */,
 				A506A13E13A6F8A900BF6B93 /* icon-72x72.png in Resources */,
+				A53F66B913AB0A4000F635A0 /* BookCategory.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +371,7 @@
 				A5B68A8A13A1CF34002B7F2D /* NSIndexSet+AQIndexesOutsideSet.m in Sources */,
 				A5B68A8B13A1CF34002B7F2D /* NSIndexSet+AQIsSetContiguous.m in Sources */,
 				A5B68A8C13A1CF34002B7F2D /* UIColor+AQGridView.m in Sources */,
+				A53F66BC13AB0B9D00F635A0 /* BookstoreData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
