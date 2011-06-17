@@ -8,9 +8,11 @@
 
 #import "BookItemGridViewController.h"
 #import "BookItemGridViewCell.h"
-
+#import "BookItem.h"
+ 
 @implementation BookItemGridViewController
-  
+@synthesize bookFamilies;
+
 #pragma mark - View lifecycle
 
 - (void) loadView
@@ -30,6 +32,17 @@
 {
     [super viewDidLoad];
         // Do any additional setup after loading the view from its nib.
+    
+    // let's see how bookfamilies go
+    [self.bookFamilies enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        BookFamily *bf = obj;
+        NSLog(@"family name %@", bf.name);
+        [bf.items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            BookItem *item = obj;
+            NSLog(@"product is %@",item.productId);
+        }];
+    }];
+    
     if ( _orderedImageNames != nil )
         return;
     

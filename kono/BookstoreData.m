@@ -7,13 +7,14 @@
 //
 
 #import "BookstoreData.h"
+#import "BookFamily.h"
 #import "BookItem.h"
 #import "KVConfig.h"
 #import "TBXML.h"
  
 @implementation BookstoreData
 @synthesize categories;
-@synthesize bookItemsWithBookFamily;
+@synthesize productsDictionary;
 
 -(void) checkAndCreateDatabase{
 	// Check if the SQL database has already been saved to the users phone, if not then copy it over
@@ -52,9 +53,9 @@
     [self checkAndCreateDatabase];
 }
 
-
 -(NSArray *)getCategoriesFromDB
 {
+    [self openDatabase];
     NSMutableArray *ret = [NSMutableArray array];
     if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
 		// Setup the SQL Statement and compile it for faster access
@@ -82,15 +83,19 @@
 -(NSArray *)categories
 {
     if (!categories) {
-        [self openDatabase];
         categories = [[self getCategoriesFromDB] retain];
     }
     return categories;
 }
 
--(NSDictionary *)bookItemsWithBookFamily 
+/**
+  * the layout of dictionary is
+  * book family name - array of BookItems 
+  * based on products list from server
+  */
+-(NSDictionary *)productsDictionary
 {
-    if (!bookItemsWithBookFamily ) {
+    if (!productsDictionary) {
         NSString *merchantID = [NSString stringWithUTF8String:MERCHANT_ID];
         NSString *urlStr = [NSString stringWithFormat:@"%@/_data/IAP/%@?merchantId=%@", HOST, WEB_API_GET_PRODUCT_LIST, merchantID];
         NSString* escapedUrlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];	
@@ -136,18 +141,60 @@
             subscriptionItemEle = [TBXML nextSiblingNamed:@"item" searchFromElement:subscriptionItemEle];
         }
         [tbxml release];
-        bookItemsWithBookFamily = [productList retain];
-        //NSLog(@"bookItemsWithBookFamily = %@", bookItemsWithBookFamily);
-        [bookItemsWithBookFamily enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        productsDictionary = [productList retain];
+        /*
+        [productsDictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             NSLog(@"key %@", key);
             for (BookItem* item in (NSArray *)obj) {
                 NSLog(@"book productId = %@",item.productId);
                 NSLog(@"book title = %@", item.title);
             }
         }];
+         */
     }
    
-    return bookItemsWithBookFamily;
+    return productsDictionary;
+}
+
+-(NSArray *)getBookFamilyNamesInCategoryFromDB:(NSString *)category
+{
+    [self openDatabase];
+    NSMutableArray *ret = [NSMutableArray array];
+    if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
+		// Setup the SQL Statement and compile it for faster access
+        NSString *stmt = [NSString stringWithFormat:@"select name from categories where category = '%@'",category];
+		const char *sqlStatement = [stmt UTF8String];
+		sqlite3_stmt *compiledStatement;
+		if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK) {
+			// Loop through the results and add them to the feeds array
+			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+				// Read the data from the result row
+				NSString *bookFamily = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 0)];
+                
+				// Add the animal object to the animals Array
+				[ret addObject:bookFamily];
+            }
+            // Release the compiled statement from memory
+            sqlite3_finalize(compiledStatement);
+            
+        }
+        sqlite3_close(database);
+        return ret;
+    }
+    return nil;
+}
+
+-(NSArray *)bookFamiliesInCategory:(NSString *)category
+{
+    NSMutableArray *ret = [NSMutableArray array];
+    NSArray *familyNames = [self getBookFamilyNamesInCategoryFromDB:category];
+    for (NSString *familyName in familyNames) {
+        BookFamily *bf = [[[BookFamily alloc] init] autorelease];
+        bf.name = familyName;
+        bf.items = [self.productsDictionary objectForKey:familyName];
+        [ret addObject:bf];
+    }
+    return ret;
 }
 
 -(void)dealloc

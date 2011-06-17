@@ -145,10 +145,8 @@
 {
     int index = indexPath.row;
     if ([self.bigCatVCs objectAtIndex:index] == [NSNull null]) {
-        BookItemGridViewController *bigCatVC = [[BookItemGridViewController alloc] initWithNibName:@"CategoryPageController" bundle:nil];
-        
-        [brain bookItemsWithBookFamily];
-        
+        BookItemGridViewController *bigCatVC = [[BookItemGridViewController alloc] init];
+        bigCatVC.bookFamilies = [brain bookFamiliesInCategory:[self.categories objectAtIndex:index]];
         [self.bigCatVCs replaceObjectAtIndex:index withObject:bigCatVC];
         [bigCatVC release];
     }

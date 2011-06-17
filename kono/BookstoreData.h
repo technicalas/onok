@@ -13,9 +13,10 @@
     NSString *databaseFileName;
     NSString *databasePath;
     NSArray *categories;
-    NSDictionary *bookItemsWithBookFamily;
+    NSDictionary *productsDictionary;
     sqlite3 *database;
 }
 @property (nonatomic, retain) NSArray *categories;
-@property (nonatomic, readonly)NSDictionary *bookItemsWithBookFamily;
+@property (nonatomic, readonly)NSDictionary *productsDictionary;
+-(NSArray *)bookFamiliesInCategory:(NSString *)category;
 @end
