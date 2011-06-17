@@ -146,6 +146,9 @@
     int index = indexPath.row;
     if ([self.bigCatVCs objectAtIndex:index] == [NSNull null]) {
         BookItemGridViewController *bigCatVC = [[BookItemGridViewController alloc] initWithNibName:@"CategoryPageController" bundle:nil];
+        
+        [brain bookItemsWithBookFamily];
+        
         [self.bigCatVCs replaceObjectAtIndex:index withObject:bigCatVC];
         [bigCatVC release];
     }
@@ -160,7 +163,7 @@
     }
     self.currBigCatVC = [self bigCatVCAtIndexPath:indexPath];
      // Pass the selected object to the new view controller.
-    self.currBigCatVC.view.frame = self.space.bounds;  //44  
+    self.currBigCatVC.view.frame = self.space.bounds;  
     [self.space addSubview:self.currBigCatVC.view];
 }
 

@@ -22,9 +22,7 @@
 }
 
 #pragma mark - View lifecycle
-#define SCREEN_PORTRAIT_WIDTH 768
-#define SCREEN_PORTRAIT_HEIGHT 1024
-#define TOP_BAR_PORTRAIT_HEIGHT 45
+ 
 #define STATUS_BAR_HEIGHT 20
 - (void)viewDidLoad
 {

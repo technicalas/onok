@@ -42,6 +42,10 @@
 		A5B68A9813A1D0A3002B7F2D /* precious.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5B68A9213A1D0A3002B7F2D /* precious.jpeg */; };
 		A5B68A9B13A1D0BD002B7F2D /* 2535.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5B68A9913A1D0BD002B7F2D /* 2535.jpeg */; };
 		A5B68A9C13A1D0BD002B7F2D /* bicycle.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5B68A9A13A1D0BD002B7F2D /* bicycle.jpeg */; };
+		A5E83CDB13ABC520005A7DF1 /* BookItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E83CDA13ABC520005A7DF1 /* BookItem.m */; };
+		A5E83CEF13ABCB80005A7DF1 /* libBookit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E83CEC13ABCB80005A7DF1 /* libBookit.a */; };
+		A5E83D0C13ABCEDE005A7DF1 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E83D0213ABCEDE005A7DF1 /* Base64.m */; };
+		A5E83D1013ABCEDE005A7DF1 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E83D0B13ABCEDE005A7DF1 /* TBXML.m */; };
 		A5F64B4913A136F3007F07D1 /* BookItemGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F64B4813A136F3007F07D1 /* BookItemGridViewCell.m */; };
 		A5F64B5013A13A2C007F07D1 /* BookItemGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F64B4E13A13A2C007F07D1 /* BookItemGridViewController.m */; };
 		A5F64B5A13A13C3E007F07D1 /* money.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5F64B5513A13C3E007F07D1 /* money.jpeg */; };
@@ -105,6 +109,24 @@
 		A5B68A9213A1D0A3002B7F2D /* precious.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = precious.jpeg; path = images/precious.jpeg; sourceTree = "<group>"; };
 		A5B68A9913A1D0BD002B7F2D /* 2535.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2535.jpeg; path = images/2535.jpeg; sourceTree = "<group>"; };
 		A5B68A9A13A1D0BD002B7F2D /* bicycle.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bicycle.jpeg; path = images/bicycle.jpeg; sourceTree = "<group>"; };
+		A5E83CD913ABC520005A7DF1 /* BookItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItem.h; sourceTree = "<group>"; };
+		A5E83CDA13ABC520005A7DF1 /* BookItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookItem.m; sourceTree = "<group>"; };
+		A5E83CE413ABCB80005A7DF1 /* bookit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bookit.h; sourceTree = "<group>"; };
+		A5E83CE513ABCB80005A7DF1 /* BookitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookitHelper.h; sourceTree = "<group>"; };
+		A5E83CE613ABCB80005A7DF1 /* DrmParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrmParserDelegate.h; sourceTree = "<group>"; };
+		A5E83CE713ABCB80005A7DF1 /* Koobe_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Koobe_Common.h; sourceTree = "<group>"; };
+		A5E83CE813ABCB80005A7DF1 /* KoobeDRM_Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KoobeDRM_Public.h; sourceTree = "<group>"; };
+		A5E83CE913ABCB80005A7DF1 /* KoobeParser_Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KoobeParser_Public.h; sourceTree = "<group>"; };
+		A5E83CEA13ABCB80005A7DF1 /* KoobePdfProfile_Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KoobePdfProfile_Public.h; sourceTree = "<group>"; };
+		A5E83CEB13ABCB80005A7DF1 /* KoobeRender_Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KoobeRender_Public.h; sourceTree = "<group>"; };
+		A5E83CEC13ABCB80005A7DF1 /* libBookit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBookit.a; sourceTree = "<group>"; };
+		A5E83CED13ABCB80005A7DF1 /* MetadataParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetadataParserDelegate.h; sourceTree = "<group>"; };
+		A5E83CEE13ABCB80005A7DF1 /* PdfProfileLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PdfProfileLib.h; sourceTree = "<group>"; };
+		A5E83D0113ABCEDE005A7DF1 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		A5E83D0213ABCEDE005A7DF1 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		A5E83D0313ABCEDE005A7DF1 /* KVConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVConfig.h; sourceTree = "<group>"; };
+		A5E83D0A13ABCEDE005A7DF1 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		A5E83D0B13ABCEDE005A7DF1 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
 		A5F64B4713A136F3007F07D1 /* BookItemGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemGridViewCell.h; sourceTree = "<group>"; };
 		A5F64B4813A136F3007F07D1 /* BookItemGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookItemGridViewCell.m; sourceTree = "<group>"; };
 		A5F64B4D13A13A2C007F07D1 /* BookItemGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemGridViewController.h; sourceTree = "<group>"; };
@@ -123,6 +145,7 @@
 				A5909DEC13A069CF0057DD01 /* UIKit.framework in Frameworks */,
 				A5909DEE13A069CF0057DD01 /* Foundation.framework in Frameworks */,
 				A5909DF013A069CF0057DD01 /* CoreGraphics.framework in Frameworks */,
+				A5E83CEF13ABCB80005A7DF1 /* libBookit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +196,8 @@
 		A5909DF113A069CF0057DD01 /* kono */ = {
 			isa = PBXGroup;
 			children = (
+				A5E83CF013ABCC4F005A7DF1 /* Utility */,
+				A5E83CE313ABCB7F005A7DF1 /* Bookit */,
 				A5909E3313A0A0310057DD01 /* CustomView */,
 				A5F64B4113A135EA007F07D1 /* GridView */,
 				A506A13C13A6F6B600BF6B93 /* Main */,
@@ -208,6 +233,8 @@
 		A5B68AB113A1FE48002B7F2D /* Bookstore */ = {
 			isa = PBXGroup;
 			children = (
+				A5E83CD913ABC520005A7DF1 /* BookItem.h */,
+				A5E83CDA13ABC520005A7DF1 /* BookItem.m */,
 				A53F66BA13AB0B9D00F635A0 /* BookstoreData.h */,
 				A53F66BB13AB0B9D00F635A0 /* BookstoreData.m */,
 				A5909E0A13A071A00057DD01 /* BookstoreViewController.h */,
@@ -216,6 +243,36 @@
 				A5F64B4613A136AC007F07D1 /* BookItemGridView */,
 			);
 			name = Bookstore;
+			sourceTree = "<group>";
+		};
+		A5E83CE313ABCB7F005A7DF1 /* Bookit */ = {
+			isa = PBXGroup;
+			children = (
+				A5E83CE413ABCB80005A7DF1 /* bookit.h */,
+				A5E83CE513ABCB80005A7DF1 /* BookitHelper.h */,
+				A5E83CE613ABCB80005A7DF1 /* DrmParserDelegate.h */,
+				A5E83CE713ABCB80005A7DF1 /* Koobe_Common.h */,
+				A5E83CE813ABCB80005A7DF1 /* KoobeDRM_Public.h */,
+				A5E83CE913ABCB80005A7DF1 /* KoobeParser_Public.h */,
+				A5E83CEA13ABCB80005A7DF1 /* KoobePdfProfile_Public.h */,
+				A5E83CEB13ABCB80005A7DF1 /* KoobeRender_Public.h */,
+				A5E83CED13ABCB80005A7DF1 /* MetadataParserDelegate.h */,
+				A5E83CEE13ABCB80005A7DF1 /* PdfProfileLib.h */,
+				A5E83CEC13ABCB80005A7DF1 /* libBookit.a */,
+			);
+			path = Bookit;
+			sourceTree = "<group>";
+		};
+		A5E83CF013ABCC4F005A7DF1 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A5E83D0113ABCEDE005A7DF1 /* Base64.h */,
+				A5E83D0213ABCEDE005A7DF1 /* Base64.m */,
+				A5E83D0313ABCEDE005A7DF1 /* KVConfig.h */,
+				A5E83D0A13ABCEDE005A7DF1 /* TBXML.h */,
+				A5E83D0B13ABCEDE005A7DF1 /* TBXML.m */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		A5F64B4113A135EA007F07D1 /* GridView */ = {
@@ -372,6 +429,9 @@
 				A5B68A8B13A1CF34002B7F2D /* NSIndexSet+AQIsSetContiguous.m in Sources */,
 				A5B68A8C13A1CF34002B7F2D /* UIColor+AQGridView.m in Sources */,
 				A53F66BC13AB0B9D00F635A0 /* BookstoreData.m in Sources */,
+				A5E83CDB13ABC520005A7DF1 /* BookItem.m in Sources */,
+				A5E83D0C13ABCEDE005A7DF1 /* Base64.m in Sources */,
+				A5E83D1013ABCEDE005A7DF1 /* TBXML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +512,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/kono\"",
+					"\"$(SRCROOT)/kono/Bookit\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -474,6 +535,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/kono\"",
+					"\"$(SRCROOT)/kono/Bookit\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

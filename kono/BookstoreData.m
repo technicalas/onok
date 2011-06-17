@@ -7,9 +7,13 @@
 //
 
 #import "BookstoreData.h"
+#import "BookItem.h"
+#import "KVConfig.h"
+#import "TBXML.h"
  
 @implementation BookstoreData
 @synthesize categories;
+@synthesize bookItemsWithBookFamily;
 
 -(void) checkAndCreateDatabase{
 	// Check if the SQL database has already been saved to the users phone, if not then copy it over
@@ -82,6 +86,68 @@
         categories = [[self getCategoriesFromDB] retain];
     }
     return categories;
+}
+
+-(NSDictionary *)bookItemsWithBookFamily 
+{
+    if (!bookItemsWithBookFamily ) {
+        NSString *merchantID = [NSString stringWithUTF8String:MERCHANT_ID];
+        NSString *urlStr = [NSString stringWithFormat:@"%@/_data/IAP/%@?merchantId=%@", HOST, WEB_API_GET_PRODUCT_LIST, merchantID];
+        NSString* escapedUrlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];	
+        NSURL *url = [NSURL URLWithString:escapedUrlStr];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        
+        if (responseData ==nil) {
+            return nil;
+        }    
+        NSMutableDictionary *productList = [NSMutableDictionary dictionary];
+        TBXML *tbxml = [[TBXML tbxmlWithXMLData:responseData] retain];
+        TBXMLElement *koobeDataEle = tbxml.rootXMLElement;
+        TBXMLElement *productListEle = [TBXML childElementNamed:@"productList" parentElement:koobeDataEle];
+            
+        //subscriptionEle
+        TBXMLElement *subscriptionEle = [TBXML childElementNamed:@"subscription" parentElement:productListEle]; 
+        TBXMLElement *subscriptionItemEle = [TBXML childElementNamed:@"item" parentElement:subscriptionEle];
+        while (subscriptionItemEle) {
+            // Init subscription products
+            TBXMLElement *productEle = [TBXML childElementNamed:@"product" parentElement:subscriptionItemEle];
+            TBXMLElement *titleEle = [TBXML childElementNamed:@"title" parentElement:subscriptionItemEle];		
+                //TBXMLElement *descriptionEle = [TBXML childElementNamed:@"description" parentElement:subscriptionItemEle];
+                //TBXMLElement *priceEle = [TBXML childElementNamed:@"price" parentElement:subscriptionItemEle];
+                
+            BookItem *book = [[[BookItem alloc] init] autorelease];
+            NSString *productId = [TBXML textForElement:productEle];
+            book.productId = productId;
+            book.title = [TBXML textForElement:titleEle];
+                
+            //parse productid and put it in its family tree
+            NSArray *words = [productId componentsSeparatedByString:@"."];
+            NSString *bookFamily =  [words objectAtIndex:3];
+            //use bookFamily to find the object
+            NSMutableArray *itemsInFamily = [productList objectForKey:bookFamily];
+            if (itemsInFamily == nil) {
+                NSMutableArray *items = [NSMutableArray arrayWithObject:book];
+                [productList setObject:items forKey:bookFamily];
+            } else {
+                [itemsInFamily addObject:book];
+            }
+                
+            subscriptionItemEle = [TBXML nextSiblingNamed:@"item" searchFromElement:subscriptionItemEle];
+        }
+        [tbxml release];
+        bookItemsWithBookFamily = [productList retain];
+        //NSLog(@"bookItemsWithBookFamily = %@", bookItemsWithBookFamily);
+        [bookItemsWithBookFamily enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            NSLog(@"key %@", key);
+            for (BookItem* item in (NSArray *)obj) {
+                NSLog(@"book productId = %@",item.productId);
+                NSLog(@"book title = %@", item.title);
+            }
+        }];
+    }
+   
+    return bookItemsWithBookFamily;
 }
 
 -(void)dealloc
