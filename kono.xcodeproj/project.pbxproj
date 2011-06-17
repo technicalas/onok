@@ -50,7 +50,7 @@
 		A5F64B4913A136F3007F07D1 /* BookItemGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F64B4813A136F3007F07D1 /* BookItemGridViewCell.m */; };
 		A5F64B5013A13A2C007F07D1 /* BookItemGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F64B4E13A13A2C007F07D1 /* BookItemGridViewController.m */; };
 		A5F64B5A13A13C3E007F07D1 /* money.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5F64B5513A13C3E007F07D1 /* money.jpeg */; };
-		A5F64B5C13A13C3E007F07D1 /* vision.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5F64B5713A13C3E007F07D1 /* vision.jpeg */; };
+		A5F64B5C13A13C3E007F07D1 /* globalviews.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5F64B5713A13C3E007F07D1 /* globalviews.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,7 +135,7 @@
 		A5F64B4D13A13A2C007F07D1 /* BookItemGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemGridViewController.h; sourceTree = "<group>"; };
 		A5F64B4E13A13A2C007F07D1 /* BookItemGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookItemGridViewController.m; sourceTree = "<group>"; };
 		A5F64B5513A13C3E007F07D1 /* money.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = money.jpeg; path = images/money.jpeg; sourceTree = "<group>"; };
-		A5F64B5713A13C3E007F07D1 /* vision.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = vision.jpeg; path = images/vision.jpeg; sourceTree = "<group>"; };
+		A5F64B5713A13C3E007F07D1 /* globalviews.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = globalviews.jpeg; path = images/globalviews.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,7 +343,7 @@
 				A5B68A9113A1D0A3002B7F2D /* player.jpeg */,
 				A5B68A9213A1D0A3002B7F2D /* precious.jpeg */,
 				A5F64B5513A13C3E007F07D1 /* money.jpeg */,
-				A5F64B5713A13C3E007F07D1 /* vision.jpeg */,
+				A5F64B5713A13C3E007F07D1 /* globalviews.jpeg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -403,7 +403,7 @@
 				A5909E0913A06A220057DD01 /* MainMenuViewController.xib in Resources */,
 				A5909E0E13A071A00057DD01 /* BookstoreViewController.xib in Resources */,
 				A5F64B5A13A13C3E007F07D1 /* money.jpeg in Resources */,
-				A5F64B5C13A13C3E007F07D1 /* vision.jpeg in Resources */,
+				A5F64B5C13A13C3E007F07D1 /* globalviews.jpeg in Resources */,
 				A5B68A9313A1D0A3002B7F2D /* 30.jpeg in Resources */,
 				A5B68A9413A1D0A3002B7F2D /* brain.jpeg in Resources */,
 				A5B68A9513A1D0A3002B7F2D /* lohas.jpeg in Resources */,

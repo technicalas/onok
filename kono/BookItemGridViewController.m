@@ -43,6 +43,8 @@
         }];
     }];
     
+    
+    
     if ( _orderedImageNames != nil )
         return;
     
@@ -80,7 +82,8 @@
 
 - (NSUInteger) numberOfItemsInGridView: (AQGridView *) aGridView
 {
-    return ( [_imageNames count] );
+    //return ( [_imageNames count] );
+    return [self.bookFamilies count];
 }
 
 #define BOOK_ITEM_WIDTH  175//250
@@ -99,7 +102,10 @@
         //plainCell.selectionGlowColor = [UIColor blueColor];
     }
         
-    bookItemCell.image = [UIImage imageNamed: [_imageNames objectAtIndex: index]];
+    //bookItemCell.image = [UIImage imageNamed: [_imageNames objectAtIndex: index]];
+    BookFamily *bookFamily = [self.bookFamilies objectAtIndex:index];
+    NSString *image = [bookFamily.name stringByAppendingString:@".jpeg"];
+    bookItemCell.image = [UIImage imageNamed:image];
             
     cell = bookItemCell;
     return ( cell );
