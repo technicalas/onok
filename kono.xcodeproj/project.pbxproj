@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A506A13E13A6F8A900BF6B93 /* icon-72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = A506A13D13A6F8A900BF6B93 /* icon-72x72.png */; };
 		A53F66B613AB0A0C00F635A0 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A53F66B513AB0A0C00F635A0 /* libsqlite3.0.dylib */; };
-		A53F66B913AB0A4000F635A0 /* BookCategory.sql in Resources */ = {isa = PBXBuildFile; fileRef = A53F66B813AB0A4000F635A0 /* BookCategory.sql */; };
 		A53F66BC13AB0B9D00F635A0 /* BookstoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = A53F66BB13AB0B9D00F635A0 /* BookstoreData.m */; };
 		A5909DEC13A069CF0057DD01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DEB13A069CF0057DD01 /* UIKit.framework */; };
 		A5909DEE13A069CF0057DD01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5909DED13A069CF0057DD01 /* Foundation.framework */; };
@@ -47,16 +46,16 @@
 		A5E83D0C13ABCEDE005A7DF1 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E83D0213ABCEDE005A7DF1 /* Base64.m */; };
 		A5E83D1013ABCEDE005A7DF1 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E83D0B13ABCEDE005A7DF1 /* TBXML.m */; };
 		A5E83D1313ABEDC5005A7DF1 /* BookFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E83D1213ABEDC4005A7DF1 /* BookFamily.m */; };
+		A5E83D1613ABFE82005A7DF1 /* BookCategory.sql in Resources */ = {isa = PBXBuildFile; fileRef = A5E83D1513ABFE82005A7DF1 /* BookCategory.sql */; };
 		A5F64B4913A136F3007F07D1 /* BookItemGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F64B4813A136F3007F07D1 /* BookItemGridViewCell.m */; };
 		A5F64B5013A13A2C007F07D1 /* BookItemGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F64B4E13A13A2C007F07D1 /* BookItemGridViewController.m */; };
-		A5F64B5A13A13C3E007F07D1 /* money.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5F64B5513A13C3E007F07D1 /* money.jpeg */; };
+		A5F64B5A13A13C3E007F07D1 /* wealthmagazine.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5F64B5513A13C3E007F07D1 /* wealthmagazine.jpeg */; };
 		A5F64B5C13A13C3E007F07D1 /* globalviews.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5F64B5713A13C3E007F07D1 /* globalviews.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A506A13D13A6F8A900BF6B93 /* icon-72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72x72.png"; sourceTree = "<group>"; };
 		A53F66B513AB0A0C00F635A0 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		A53F66B813AB0A4000F635A0 /* BookCategory.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = BookCategory.sql; path = resources/BookCategory.sql; sourceTree = "<group>"; };
 		A53F66BA13AB0B9D00F635A0 /* BookstoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookstoreData.h; sourceTree = "<group>"; };
 		A53F66BB13AB0B9D00F635A0 /* BookstoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookstoreData.m; sourceTree = "<group>"; };
 		A5909DE713A069CE0057DD01 /* kono.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kono.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,11 +129,12 @@
 		A5E83D0B13ABCEDE005A7DF1 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
 		A5E83D1113ABEDC4005A7DF1 /* BookFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookFamily.h; sourceTree = "<group>"; };
 		A5E83D1213ABEDC4005A7DF1 /* BookFamily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookFamily.m; sourceTree = "<group>"; };
+		A5E83D1513ABFE82005A7DF1 /* BookCategory.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = BookCategory.sql; path = resources/BookCategory.sql; sourceTree = "<group>"; };
 		A5F64B4713A136F3007F07D1 /* BookItemGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemGridViewCell.h; sourceTree = "<group>"; };
 		A5F64B4813A136F3007F07D1 /* BookItemGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookItemGridViewCell.m; sourceTree = "<group>"; };
 		A5F64B4D13A13A2C007F07D1 /* BookItemGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemGridViewController.h; sourceTree = "<group>"; };
 		A5F64B4E13A13A2C007F07D1 /* BookItemGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookItemGridViewController.m; sourceTree = "<group>"; };
-		A5F64B5513A13C3E007F07D1 /* money.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = money.jpeg; path = images/money.jpeg; sourceTree = "<group>"; };
+		A5F64B5513A13C3E007F07D1 /* wealthmagazine.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wealthmagazine.jpeg; path = images/wealthmagazine.jpeg; sourceTree = "<group>"; };
 		A5F64B5713A13C3E007F07D1 /* globalviews.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = globalviews.jpeg; path = images/globalviews.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -332,7 +332,7 @@
 		A5F64B5213A13BE3007F07D1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A53F66B813AB0A4000F635A0 /* BookCategory.sql */,
+				A5E83D1513ABFE82005A7DF1 /* BookCategory.sql */,
 				A506A13D13A6F8A900BF6B93 /* icon-72x72.png */,
 				A5B68A9913A1D0BD002B7F2D /* 2535.jpeg */,
 				A5B68A9A13A1D0BD002B7F2D /* bicyclelohas.jpeg */,
@@ -342,7 +342,7 @@
 				A5B68A9013A1D0A3002B7F2D /* chewpeople.jpeg */,
 				A5B68A9113A1D0A3002B7F2D /* player.jpeg */,
 				A5B68A9213A1D0A3002B7F2D /* precious.jpeg */,
-				A5F64B5513A13C3E007F07D1 /* money.jpeg */,
+				A5F64B5513A13C3E007F07D1 /* wealthmagazine.jpeg */,
 				A5F64B5713A13C3E007F07D1 /* globalviews.jpeg */,
 			);
 			name = Resources;
@@ -402,7 +402,7 @@
 				A5909DFF13A069CF0057DD01 /* MainWindow.xib in Resources */,
 				A5909E0913A06A220057DD01 /* MainMenuViewController.xib in Resources */,
 				A5909E0E13A071A00057DD01 /* BookstoreViewController.xib in Resources */,
-				A5F64B5A13A13C3E007F07D1 /* money.jpeg in Resources */,
+				A5F64B5A13A13C3E007F07D1 /* wealthmagazine.jpeg in Resources */,
 				A5F64B5C13A13C3E007F07D1 /* globalviews.jpeg in Resources */,
 				A5B68A9313A1D0A3002B7F2D /* 30.jpeg in Resources */,
 				A5B68A9413A1D0A3002B7F2D /* brain.jpeg in Resources */,
@@ -413,7 +413,7 @@
 				A5B68A9B13A1D0BD002B7F2D /* 2535.jpeg in Resources */,
 				A5B68A9C13A1D0BD002B7F2D /* bicyclelohas.jpeg in Resources */,
 				A506A13E13A6F8A900BF6B93 /* icon-72x72.png in Resources */,
-				A53F66B913AB0A4000F635A0 /* BookCategory.sql in Resources */,
+				A5E83D1613ABFE82005A7DF1 /* BookCategory.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

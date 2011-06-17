@@ -24,14 +24,6 @@
 #define CATEGORY_SIZE 11
 - (NSArray *)categories
 {
-    /*
-    if (!categories) {
-        // replace with database content
-         
-        categories = [[NSArray alloc] initWithObjects:@"女性", @"娛樂", @"家居", @"新聞", @"旅行",                                                                  @"汽車", @"生活", @"男性", @"科技", @"藝術", @"運動",nil];
-    }
-    return categories;
-     */
     return brain.categories;
 }
 
@@ -50,8 +42,8 @@
 - (NSDictionary *)categoryDictionary
 {
     if (!categoryDictionary) {
-        NSArray *ch = [NSArray arrayWithObjects:@"財經企管", @"新聞時事", @"運動競技", nil];
-        NSArray *en = [NSArray arrayWithObjects:@"finance",@"news", @"sports", nil];
+        NSArray *ch = [NSArray arrayWithObjects:@"財經企管", @"新聞時事", @"運動競技", @"休閒生活", nil];
+        NSArray *en = [NSArray arrayWithObjects:@"finance", @"news", @"sports", @"life", nil];
         categoryDictionary = [[NSDictionary alloc] initWithObjects:ch forKeys:en];
     }
     return categoryDictionary;
