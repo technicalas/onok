@@ -189,10 +189,14 @@
     NSMutableArray *ret = [NSMutableArray array];
     NSArray *familyNames = [self getBookFamilyNamesInCategoryFromDB:category];
     for (NSString *familyName in familyNames) {
-        BookFamily *bf = [[[BookFamily alloc] init] autorelease];
-        bf.name = familyName;
-        bf.items = [self.productsDictionary objectForKey:familyName];
-        [ret addObject:bf];
+        //check if the book family exists in productsDictionary, if yes, add it into the bookFamilies in the category
+        NSArray *items = [self.productsDictionary objectForKey:familyName];
+        if (items) {
+            BookFamily *bf = [[[BookFamily alloc] init] autorelease];
+            bf.name = familyName;
+            bf.items = items;
+            [ret addObject:bf];
+        }
     }
     return ret;
 }
