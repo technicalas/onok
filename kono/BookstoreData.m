@@ -37,10 +37,8 @@
     
 	// Copy the database from the package to the users filesystem
 	[fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
-    
 	[fileManager release];
 }
-
 
 -(void)openDatabase
 {
@@ -49,7 +47,6 @@
 	NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDir = [documentPaths objectAtIndex:0];
 	databasePath = [[documentsDir stringByAppendingPathComponent:databaseFileName] retain];
-    
     [self checkAndCreateDatabase];
 }
 
@@ -66,13 +63,11 @@
 			while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
 				// Read the data from the result row
 				NSString *category = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 0)];
-                
 				// Add the animal object to the animals Array
 				[ret addObject:category];
             }
             // Release the compiled statement from memory
-            sqlite3_finalize(compiledStatement);
-            
+            sqlite3_finalize(compiledStatement);            
         }
         sqlite3_close(database);
         return ret;

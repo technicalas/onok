@@ -13,7 +13,7 @@
 @property (nonatomic, readonly)NSArray *categoriesCh;
 @property (nonatomic, readonly)NSDictionary *categoryDictionary;
 @property (nonatomic, readonly)NSMutableArray *bigCatVCs;
-@property (nonatomic, assign)BookItemGridViewController *currBigCatVC;
+@property (nonatomic, retain)BookItemGridViewController *currBigCatVC;
 @end
 
 @implementation BookstoreViewController
@@ -137,6 +137,7 @@
 {
     int index = indexPath.row;
     if ([self.bigCatVCs objectAtIndex:index] == [NSNull null]) {
+        
         BookItemGridViewController *bigCatVC = [[BookItemGridViewController alloc] init];
         bigCatVC.bookFamilies = [brain bookFamiliesInCategory:[self.categories objectAtIndex:index]];
         [self.bigCatVCs replaceObjectAtIndex:index withObject:bigCatVC];
@@ -152,7 +153,8 @@
         [self.currBigCatVC.view removeFromSuperview];
     }
     self.currBigCatVC = [self bigCatVCAtIndexPath:indexPath];
-     // Pass the selected object to the new view controller.
+     
+    // Pass the selected object to the new view controller.
     self.currBigCatVC.view.frame = self.space.bounds;  
     [self.space addSubview:self.currBigCatVC.view];
 }

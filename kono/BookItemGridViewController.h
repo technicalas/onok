@@ -11,7 +11,6 @@
 #import "BookFamily.h"
 
 @interface BookItemGridViewController : AQGridViewController <AQGridViewDelegate, AQGridViewDataSource> {
-    NSArray * _orderedImageNames;
     NSArray * _imageNames;
     NSArray *bookFamilies;
 }

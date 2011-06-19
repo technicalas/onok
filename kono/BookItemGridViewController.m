@@ -9,7 +9,8 @@
 #import "BookItemGridViewController.h"
 #import "BookItemGridViewCell.h"
 #import "BookItem.h"
- 
+#import "BookSalePageViewController.h"
+
 @implementation BookItemGridViewController
 @synthesize bookFamilies;
 
@@ -43,11 +44,7 @@
         }];
     }];
     
-    
-    
-    if ( _orderedImageNames != nil )
-        return;
-    
+        
     NSArray * paths = [NSBundle pathsForResourcesOfType: @"jpeg" inDirectory: [[NSBundle mainBundle] bundlePath]];
     NSMutableArray * allImageNames = [[NSMutableArray alloc] init];
     
@@ -55,9 +52,6 @@
     {
         [allImageNames addObject: [path lastPathComponent]];
     }
-
-    _orderedImageNames =  [allImageNames copy];
-    _imageNames = [_orderedImageNames copy];
 
     [allImageNames release];
     [self.gridView reloadData];
@@ -120,11 +114,21 @@
 #pragma mark Grid View Delegate
 
 // nothing here yet
+- (void) gridView: (AQGridView *) gridView didSelectItemAtIndex: (NSUInteger) index
+{
+    UIView *top = [[self.view subviews] objectAtIndex:0];
+    if (top) {
+        [top removeFromSuperview];
+    }
+    BookSalePageViewController *bookSalePageVC = [[BookSalePageViewController alloc] initWithNibName:@"BookSalePageViewController" bundle:nil];
+    bookSalePageVC.book = [self.bookFamilies objectAtIndex:index];
+    [self.view addSubview:bookSalePageVC.view];
+    [bookSalePageVC release];
+}
 
 - (void)dealloc
 {
     [_imageNames release];
-    [_orderedImageNames release];
     [super dealloc];
 }
 

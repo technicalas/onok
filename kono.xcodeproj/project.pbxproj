@@ -47,6 +47,8 @@
 		A5E83D1013ABCEDE005A7DF1 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E83D0B13ABCEDE005A7DF1 /* TBXML.m */; };
 		A5E83D1313ABEDC5005A7DF1 /* BookFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E83D1213ABEDC4005A7DF1 /* BookFamily.m */; };
 		A5E83D1613ABFE82005A7DF1 /* BookCategory.sql in Resources */ = {isa = PBXBuildFile; fileRef = A5E83D1513ABFE82005A7DF1 /* BookCategory.sql */; };
+		A5E83D3813AE716A005A7DF1 /* BookSalePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E83D3613AE716A005A7DF1 /* BookSalePageViewController.m */; };
+		A5E83D3913AE716A005A7DF1 /* BookSalePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E83D3713AE716A005A7DF1 /* BookSalePageViewController.xib */; };
 		A5F64B4913A136F3007F07D1 /* BookItemGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F64B4813A136F3007F07D1 /* BookItemGridViewCell.m */; };
 		A5F64B5013A13A2C007F07D1 /* BookItemGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F64B4E13A13A2C007F07D1 /* BookItemGridViewController.m */; };
 		A5F64B5A13A13C3E007F07D1 /* wealthmagazine.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A5F64B5513A13C3E007F07D1 /* wealthmagazine.jpeg */; };
@@ -130,6 +132,9 @@
 		A5E83D1113ABEDC4005A7DF1 /* BookFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookFamily.h; sourceTree = "<group>"; };
 		A5E83D1213ABEDC4005A7DF1 /* BookFamily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookFamily.m; sourceTree = "<group>"; };
 		A5E83D1513ABFE82005A7DF1 /* BookCategory.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = BookCategory.sql; path = resources/BookCategory.sql; sourceTree = "<group>"; };
+		A5E83D3513AE7169005A7DF1 /* BookSalePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookSalePageViewController.h; sourceTree = "<group>"; };
+		A5E83D3613AE716A005A7DF1 /* BookSalePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookSalePageViewController.m; sourceTree = "<group>"; };
+		A5E83D3713AE716A005A7DF1 /* BookSalePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookSalePageViewController.xib; sourceTree = "<group>"; };
 		A5F64B4713A136F3007F07D1 /* BookItemGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemGridViewCell.h; sourceTree = "<group>"; };
 		A5F64B4813A136F3007F07D1 /* BookItemGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookItemGridViewCell.m; sourceTree = "<group>"; };
 		A5F64B4D13A13A2C007F07D1 /* BookItemGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemGridViewController.h; sourceTree = "<group>"; };
@@ -242,6 +247,9 @@
 				A53F66BA13AB0B9D00F635A0 /* BookstoreData.h */,
 				A53F66BB13AB0B9D00F635A0 /* BookstoreData.m */,
 				A5F64B4613A136AC007F07D1 /* BookItemGridView */,
+				A5E83D3513AE7169005A7DF1 /* BookSalePageViewController.h */,
+				A5E83D3613AE716A005A7DF1 /* BookSalePageViewController.m */,
+				A5E83D3713AE716A005A7DF1 /* BookSalePageViewController.xib */,
 				A5E83D1413ABF5A3005A7DF1 /* DataModel */,
 			);
 			name = Bookstore;
@@ -414,6 +422,7 @@
 				A5B68A9C13A1D0BD002B7F2D /* bicyclelohas.jpeg in Resources */,
 				A506A13E13A6F8A900BF6B93 /* icon-72x72.png in Resources */,
 				A5E83D1613ABFE82005A7DF1 /* BookCategory.sql in Resources */,
+				A5E83D3913AE716A005A7DF1 /* BookSalePageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +455,7 @@
 				A5E83D0C13ABCEDE005A7DF1 /* Base64.m in Sources */,
 				A5E83D1013ABCEDE005A7DF1 /* TBXML.m in Sources */,
 				A5E83D1313ABEDC5005A7DF1 /* BookFamily.m in Sources */,
+				A5E83D3813AE716A005A7DF1 /* BookSalePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
