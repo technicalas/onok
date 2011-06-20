@@ -16,7 +16,8 @@
     BookSalePageViewController *bookSalePageVC;
     NSArray * _imageNames;
     NSArray *bookFamilies;
-    
+    int original;
+    int orient;
 }
 @property (nonatomic, retain)NSArray *bookFamilies;
 @property (nonatomic, retain)BookSalePageViewController *bookSalePageVC;
