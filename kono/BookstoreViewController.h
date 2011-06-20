@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "BookItemGridViewController.h"
 #import "BookstoreData.h"
+#import "BookSalePageViewController.h"
 
-@interface BookstoreViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+@interface BookstoreViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PresentSaleViewDelegate>{
     IBOutlet UITableView *categoryTableView;
     IBOutlet UIView *space;
     NSArray *categories;

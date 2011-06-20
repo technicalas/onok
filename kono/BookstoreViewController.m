@@ -98,6 +98,12 @@
 	return YES;
 }
 
+#pragma mark -
+#pragma mark PresentSaleViewDelegate
+-(void)salePageViewControllerDidFinished:(BookSalePageViewController *)bookSalePageVC
+{
+    [self dismissModalViewControllerAnimated:NO];
+}
 
 #pragma mark -
 #pragma mark Table view data source

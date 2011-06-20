@@ -10,6 +10,7 @@
 
 
 @implementation BookSalePageViewController
+@synthesize delegate;
 @synthesize book;
 @synthesize imageView;
 
@@ -17,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -49,6 +50,12 @@
 {
     // Return YES for supported orientations
 	return YES;
+}
+
+-(IBAction)backButtonPressed
+{
+    [self.view removeFromSuperview];
+    //[delegate salePageViewControllerDidFinished:self];
 }
 
 @end

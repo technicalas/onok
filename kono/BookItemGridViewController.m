@@ -9,10 +9,10 @@
 #import "BookItemGridViewController.h"
 #import "BookItemGridViewCell.h"
 #import "BookItem.h"
-#import "BookSalePageViewController.h"
 
 @implementation BookItemGridViewController
 @synthesize bookFamilies;
+@synthesize bookSalePageVC;
 
 #pragma mark - View lifecycle
 
@@ -43,17 +43,6 @@
             NSLog(@"product is %@",item.productId);
         }];
     }];
-    
-        
-    NSArray * paths = [NSBundle pathsForResourcesOfType: @"jpeg" inDirectory: [[NSBundle mainBundle] bundlePath]];
-    NSMutableArray * allImageNames = [[NSMutableArray alloc] init];
-    
-    for ( NSString * path in paths )
-    {
-        [allImageNames addObject: [path lastPathComponent]];
-    }
-
-    [allImageNames release];
     [self.gridView reloadData];
    
 }
@@ -69,6 +58,12 @@
 {
     // Return YES for supported orientations
 	return YES;
+}
+#pragma mark -
+#pragma PresentBookSaleViewDelegate
+-(void)salePageViewControllerDidFinished:(BookSalePageViewController *)bookSalePageVC
+{
+    [self.bookSalePageVC.view removeFromSuperview];
 }
 
 #pragma mark -
@@ -116,14 +111,12 @@
 // nothing here yet
 - (void) gridView: (AQGridView *) gridView didSelectItemAtIndex: (NSUInteger) index
 {
-    UIView *top = [[self.view subviews] objectAtIndex:0];
-    if (top) {
-        [top removeFromSuperview];
-    }
-    BookSalePageViewController *bookSalePageVC = [[BookSalePageViewController alloc] initWithNibName:@"BookSalePageViewController" bundle:nil];
-    bookSalePageVC.book = [self.bookFamilies objectAtIndex:index];
-    [self.view addSubview:bookSalePageVC.view];
-    [bookSalePageVC release];
+    BookSalePageViewController *bspvc = [[BookSalePageViewController alloc] initWithNibName:@"BookSalePageViewController" bundle:nil];
+    bspvc.book = [self.bookFamilies objectAtIndex:index];
+    self.bookSalePageVC = [bspvc autorelease];
+    UIView *superview = [[self.view superview] superview];// this is the bookstore view
+    //[self.view addSubview:bookSalePageVC.view];
+    [superview addSubview:self.bookSalePageVC.view];
 }
 
 - (void)dealloc
