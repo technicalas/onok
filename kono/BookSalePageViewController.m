@@ -55,7 +55,7 @@
 -(IBAction)backButtonPressed
 {
     [self.view removeFromSuperview];
-    //[delegate salePageViewControllerDidFinished:self];
+    [delegate salePageViewControllerDidFinished:self];
 }
 
 @end

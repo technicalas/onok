@@ -9,6 +9,7 @@
 #import "BookItemGridViewController.h"
 #import "BookItemGridViewCell.h"
 #import "BookItem.h"
+#import "KVConfig.h"
 
 @implementation BookItemGridViewController
 @synthesize bookFamilies;
@@ -59,11 +60,21 @@
     // Return YES for supported orientations
 	return YES;
 }
-#pragma mark -
-#pragma PresentBookSaleViewDelegate
--(void)salePageViewControllerDidFinished:(BookSalePageViewController *)bookSalePageVC
+
+- (void)handleRotation:(UIInterfaceOrientation)interfaceOrientation
 {
-    [self.bookSalePageVC.view removeFromSuperview];
+    if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
+        self.bookSalePageVC.view.frame = CGRectMake(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT) ;
+    } else {
+        self.bookSalePageVC.view.frame = CGRectMake(0, 0, WINDOW_HEIGHT, WINDOW_WIDTH);
+    }
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    NSLog(@"me!me!");
+    UIInterfaceOrientation oreo = UIInterfaceOrientationIsPortrait(fromInterfaceOrientation)?UIInterfaceOrientationLandscapeLeft:UIInterfaceOrientationPortrait;
+    [self handleRotation:oreo];
 }
 
 #pragma mark -
@@ -71,7 +82,6 @@
 
 - (NSUInteger) numberOfItemsInGridView: (AQGridView *) aGridView
 {
-    //return ( [_imageNames count] );
     return [self.bookFamilies count];
 }
 
@@ -106,21 +116,37 @@
 }
 
 #pragma mark -
+#pragma mark PresentSaleViewDelegate
+-(void)salePageViewControllerDidFinished:(BookSalePageViewController *)bookSalePageVC
+{
+    self.bookSalePageVC = nil;
+}
+
+#pragma mark -
 #pragma mark Grid View Delegate
+
+-(void)displaySaleView 
+{
+    UIView *superview = [[self.view superview] superview];// this is the bookstore view
+    [self handleRotation:self.interfaceOrientation];
+    [superview addSubview:self.bookSalePageVC.view];
+}
 
 // nothing here yet
 - (void) gridView: (AQGridView *) gridView didSelectItemAtIndex: (NSUInteger) index
 {
     BookSalePageViewController *bspvc = [[BookSalePageViewController alloc] initWithNibName:@"BookSalePageViewController" bundle:nil];
     bspvc.book = [self.bookFamilies objectAtIndex:index];
+    bspvc.delegate = self;
     self.bookSalePageVC = [bspvc autorelease];
-    UIView *superview = [[self.view superview] superview];// this is the bookstore view
     //[self.view addSubview:bookSalePageVC.view];
-    [superview addSubview:self.bookSalePageVC.view];
+    [self displaySaleView];
 }
 
 - (void)dealloc
 {
+    [bookFamilies release];
+    [bookSalePageVC release];
     [_imageNames release];
     [super dealloc];
 }

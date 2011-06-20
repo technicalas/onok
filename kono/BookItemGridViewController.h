@@ -21,5 +21,4 @@
 @property (nonatomic, retain)NSArray *bookFamilies;
 @property (nonatomic, retain)BookSalePageViewController *bookSalePageVC;
 -(void)salePageViewControllerDidFinished:(BookSalePageViewController *)bookSalePageVC;
-
 @end

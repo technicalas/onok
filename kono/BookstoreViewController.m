@@ -83,6 +83,9 @@
     
     //generate data
     brain = [[BookstoreData alloc] init];
+    
+    //
+    self.view.autoresizesSubviews = YES;
 }
 
 - (void)viewDidUnload
@@ -97,12 +100,10 @@
     // Return YES for supported orientations
 	return YES;
 }
-
-#pragma mark -
-#pragma mark PresentSaleViewDelegate
--(void)salePageViewControllerDidFinished:(BookSalePageViewController *)bookSalePageVC
+ 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    [self dismissModalViewControllerAnimated:NO];
+    [self.currBigCatVC didRotateFromInterfaceOrientation:fromInterfaceOrientation];
 }
 
 #pragma mark -
@@ -163,6 +164,7 @@
     // Pass the selected object to the new view controller.
     self.currBigCatVC.view.frame = self.space.bounds;  
     [self.space addSubview:self.currBigCatVC.view];
+    
 }
 
 @end

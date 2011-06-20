@@ -33,13 +33,11 @@
     if (UIInterfaceOrientationIsPortrait(or)) {
         self.view.frame = CGRectMake(0, STATUS_BAR_HEIGHT, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height);
     }  
-    
     self.bookstorevc = [[BookstoreViewController alloc] initWithNibName:@"BookstoreViewController" bundle:nil];
     [bookstorevc release]; 
     
     CGRect bounds = self.space.bounds;
     self.bookstorevc.view.frame = CGRectMake(0, 0, bounds.size.width, bounds.size.height -  STATUS_BAR_HEIGHT);//self.space.bounds;strange; 
-    
     [self.space addSubview:self.bookstorevc.view];
 }
 
@@ -63,14 +61,10 @@
 	return YES;
 }
  
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-     
-}
-
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     self.bookstorevc.view.frame = self.space.bounds;//strange;
+    [self.bookstorevc didRotateFromInterfaceOrientation:fromInterfaceOrientation];
 }
 
 - (void)dealloc
