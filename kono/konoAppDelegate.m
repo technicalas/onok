@@ -19,10 +19,21 @@
     MainMenuViewController *mmvc = [[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
     
     [self.window addSubview:mmvc.view];
+    
+    login = [[LoginDialogViewController alloc] init];
+    //NSLog(@"fb did not login");    
+    
+    [mmvc.view addSubview:login.view];
+    //[login autorelease];    
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    
+    return [login.facebook handleOpenURL:url]; 
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*

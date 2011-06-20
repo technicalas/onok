@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "MainMenuViewController.h"
+#import "LoginDialogViewController.h"
 
 @interface konoAppDelegate : NSObject <UIApplicationDelegate> {
 
+    LoginDialogViewController *login;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
