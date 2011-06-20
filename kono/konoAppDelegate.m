@@ -24,8 +24,6 @@
     //NSLog(@"fb did not login");    
     
     [mmvc.view addSubview:login.view];
-    //[login autorelease];    
-    
     [self.window makeKeyAndVisible];
     return YES;
 }

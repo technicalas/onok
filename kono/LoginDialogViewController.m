@@ -102,9 +102,9 @@
     
     if (![facebook isSessionValid]) {
         [facebook authorize:nil delegate:self];
+    } else {
+        [self.view removeFromSuperview];
     }
-    
-    
     
 }
 
