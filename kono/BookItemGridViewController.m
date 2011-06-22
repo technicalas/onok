@@ -45,9 +45,7 @@
         }];
     }];
     [self.gridView reloadData];
-   
-    UIInterfaceOrientation or = [UIApplication sharedApplication].statusBarOrientation;
-    orient = (UIInterfaceOrientationIsPortrait(or))?0:1;
+
 }
 
 - (void)viewDidUnload
@@ -76,8 +74,6 @@
 {
     UIInterfaceOrientation oreo = UIInterfaceOrientationIsPortrait(fromInterfaceOrientation)?UIInterfaceOrientationLandscapeLeft:UIInterfaceOrientationPortrait;
     [self handleRotation:oreo];
-    
-    orient = (orient+1)%2;
 }
 
 #pragma mark -
