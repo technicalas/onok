@@ -46,7 +46,8 @@
     }];
     [self.gridView reloadData];
    
-    orient = (UIInterfaceOrientationIsPortrait(self.interfaceOrientation))?0:1;
+    UIInterfaceOrientation or = [UIApplication sharedApplication].statusBarOrientation;
+    orient = (UIInterfaceOrientationIsPortrait(or))?0:1;
 }
 
 - (void)viewDidUnload
@@ -131,8 +132,8 @@
 {
     UIView *superview = [[self.view superview] superview];// this is the bookstore view
     //[self handleRotation:self.interfaceOrientation];// so ... bug here
-    NSLog(@"orientaiton = %d", self.interfaceOrientation);
-    UIInterfaceOrientation oreo = (orient == 0)? UIInterfaceOrientationPortrait:UIInterfaceOrientationLandscapeLeft;
+    //UIInterfaceOrientation oreo = (orient == 0)? UIInterfaceOrientationPortrait:UIInterfaceOrientationLandscapeLeft;
+    UIInterfaceOrientation oreo = [UIApplication sharedApplication].statusBarOrientation;
     [self handleRotation:oreo];
     [superview addSubview:self.bookSalePageVC.view];
 }
