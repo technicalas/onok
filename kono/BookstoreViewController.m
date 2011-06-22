@@ -168,36 +168,58 @@
 }
 */
 
+- (void)spinnerStart
+{
+    spinnerView.hidden = NO;
+    [spinnerView startAnimating];
+    loadingButton.title = @"Loading ..."; 
+    [self.view setNeedsDisplay];
+}
+
+- (void)spinnerStop
+{
+    [spinnerView stopAnimating];
+    spinnerView.hidden = YES;
+    loadingButton.title = @"";
+    [self.view setNeedsDisplay];
+}
+
 - (void)putBigCatVCAtIndexPath:(NSIndexPath *)indexPath
 {
+    static BOOL isFirstTime = YES;//because now only the first time connects to server; will change in the future
     int index = indexPath.row;
     if ([self.bigCatVCs objectAtIndex:index] == [NSNull null]) {
         // use thread b/c the product list has not been fetched
-        if (brain.productsDictionary == nil) {
+        if (isFirstTime) {
+            [self spinnerStart];
             dispatch_queue_t downloadQueue = dispatch_queue_create("Koobe Product List Fetcher", NULL);
-            dispatch_async(downloadQueue, ^{
-                NSArray *bookFamilies = [brain bookFamiliesInCategory:[self.categories objectAtIndex:index]];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    BookItemGridViewController *bigCatVC = [[BookItemGridViewController alloc] init];
-                    bigCatVC.bookFamilies = bookFamilies;
-                    [self.bigCatVCs replaceObjectAtIndex:index withObject:bigCatVC];
-                    [bigCatVC release];
+                dispatch_async(downloadQueue, ^{
+                    NSArray *bookFamilies = [brain bookFamiliesInCategory:[self.categories objectAtIndex:index]];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        BookItemGridViewController *bigCatVC = [[BookItemGridViewController alloc] init];
+                        bigCatVC.bookFamilies = bookFamilies;
+                        [self.bigCatVCs replaceObjectAtIndex:index withObject:bigCatVC];
+                        [bigCatVC release];
+                        self.currBigCatVC = [self.bigCatVCs objectAtIndex:index];
+                        self.currBigCatVC.view.frame = self.space.bounds;  
+                        [self.space addSubview:self.currBigCatVC.view];
+                        [self spinnerStop];
+                    });
                 });
-            });
             dispatch_release(downloadQueue);
-        }  else {
-            // because the product list has already been fetched
-            BookItemGridViewController *bigCatVC = [[BookItemGridViewController alloc] init];
-            bigCatVC.bookFamilies = [brain bookFamiliesInCategory:[self.categories objectAtIndex:index]];
-            [self.bigCatVCs replaceObjectAtIndex:index withObject:bigCatVC];
-            [bigCatVC release];
+            isFirstTime = NO;
+            return;
         }
+        BookItemGridViewController *bigCatVC = [[BookItemGridViewController alloc] init];
+        bigCatVC.bookFamilies = [brain bookFamiliesInCategory:[self.categories objectAtIndex:index]];
+        [self.bigCatVCs replaceObjectAtIndex:index withObject:bigCatVC];
+        [bigCatVC release];
+        
     }
     
     self.currBigCatVC = [self.bigCatVCs objectAtIndex:index];
     self.currBigCatVC.view.frame = self.space.bounds;  
     [self.space addSubview:self.currBigCatVC.view];
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

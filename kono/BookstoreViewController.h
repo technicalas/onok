@@ -13,6 +13,9 @@
 @interface BookstoreViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
     IBOutlet UITableView *categoryTableView;
     IBOutlet UIView *space;
+    IBOutlet UIBarButtonItem *loadingButton;
+    IBOutlet UIActivityIndicatorView *spinnerView;
+    IBOutlet UIToolbar *topToolbar;
     NSArray *categories;
     NSArray *categoriesCh;
     NSMutableArray *bigCatVCs;
