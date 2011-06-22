@@ -139,7 +139,7 @@
 
 #pragma mark -
 #pragma mark Table view delegate
-
+/*
 - (BookItemGridViewController *)bigCatVCAtIndexPath:(NSIndexPath *)indexPath
 {
     int index = indexPath.row;
@@ -164,6 +164,51 @@
     // Pass the selected object to the new view controller.
     self.currBigCatVC.view.frame = self.space.bounds;  
     [self.space addSubview:self.currBigCatVC.view];
+    
+}
+*/
+
+- (void)putBigCatVCAtIndexPath:(NSIndexPath *)indexPath
+{
+    int index = indexPath.row;
+    if ([self.bigCatVCs objectAtIndex:index] == [NSNull null]) {
+        // use thread b/c the product list has not been fetched
+        if (brain.productsDictionary == nil) {
+            dispatch_queue_t downloadQueue = dispatch_queue_create("Koobe Product List Fetcher", NULL);
+            dispatch_async(downloadQueue, ^{
+                NSArray *bookFamilies = [brain bookFamiliesInCategory:[self.categories objectAtIndex:index]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    BookItemGridViewController *bigCatVC = [[BookItemGridViewController alloc] init];
+                    bigCatVC.bookFamilies = bookFamilies;
+                    [self.bigCatVCs replaceObjectAtIndex:index withObject:bigCatVC];
+                    [bigCatVC release];
+                });
+            });
+            dispatch_release(downloadQueue);
+        }  else {
+            // because the product list has already been fetched
+            BookItemGridViewController *bigCatVC = [[BookItemGridViewController alloc] init];
+            bigCatVC.bookFamilies = [brain bookFamiliesInCategory:[self.categories objectAtIndex:index]];
+            [self.bigCatVCs replaceObjectAtIndex:index withObject:bigCatVC];
+            [bigCatVC release];
+        }
+    }
+    
+    self.currBigCatVC = [self.bigCatVCs objectAtIndex:index];
+    self.currBigCatVC.view.frame = self.space.bounds;  
+    [self.space addSubview:self.currBigCatVC.view];
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    if (self.currBigCatVC) {
+        [self.currBigCatVC.view removeFromSuperview];
+    }
+    [self putBigCatVCAtIndexPath:indexPath];
+    
+    // Pass the selected object to the new view controller.
     
 }
 
